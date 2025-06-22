@@ -1,7 +1,118 @@
-/*
-    home.css: This website contains selectors only used in home.css
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
-    All pages share the styles on index.css but you should create 
-    one more css for each page that will contain the selected used 
-    on that page only (the ones not reused in other pages).
-*/
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #003087;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-top: 20px;
+  color: #0066cc;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-top: 15px;
+  color: #333;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+a {
+  color: #0066cc;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+section {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 20px;
+}
+
+.text-primary {
+  color: #0066cc !important;
+}
+
+.mb-5 {
+  margin-bottom: 3rem;
+}
+
+.mt-5 {
+  margin-top: 3rem;
+}
+
+/* Estilos para la imagen animada */
+.cloud-image {
+  width: 300px; /* Ajustado a 300px para que sea proporcional al texto */
+  height: 300px; /* Ajustado a 300px */
+  background: url("https://i.pinimg.com/originals/bf/48/11/bf481115335525bfb8779125e7b66d73.gif")
+    no-repeat center;
+  background-size: contain;
+  animation: float 3s infinite ease-in-out;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animate-cloud {
+  animation: float 3s infinite ease-in-out;
+}
+
+/* Estilos para las secciones de tecnologías */
+.tech-sections {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.tech-section {
+  flex: 1;
+  min-width: 200px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.tech-icons {
+  margin: 10px 0;
+}
+
+.tech-icons a {
+  margin: 0 5px;
+  text-decoration: none;
+}
+
+/* Asegúrate de incluir Font Awesome para los íconos */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css");
