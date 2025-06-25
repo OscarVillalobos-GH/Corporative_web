@@ -31,7 +31,6 @@ export const Tecnologias = () => {
         </div>
       </div>
 
-      {/* Sección de Tecnologías específicas */}
       <section className="mb-5">
         <h2 className="text-primary">Tecnologías que utilizamos</h2>
         <div className="tech-sections">

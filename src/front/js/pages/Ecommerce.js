@@ -4,7 +4,6 @@ import "../../styles/home.css";
 export const Ecommerce = () => {
   return (
     <div className="container mt-5">
-      {/* Captura 1: Encabezado con imagen */}
       <section className="mb-5 text-center">
         <h1 className="text-primary mb-4">
           ¿Por Qué Elegir Desarrollo de Ecommerce Personalizado?
@@ -12,15 +11,14 @@ export const Ecommerce = () => {
         <p className="lead">Soluciones Integrales Adaptadas a Tu Visión</p>
         <div className="mt-4">
           <img
-            src="https://ecommerce.institute/wp-content/uploads/2021/11/ecommerce_0jpg.jpg" // Placeholder, reemplaza con tu imagen
+            src="https://ecommerce.institute/wp-content/uploads/2021/11/ecommerce_0jpg.jpg"
             alt="Ecommerce Personalizado"
             className="img-fluid rounded"
-            style={{ maxWidth: "80%", maxHeight: "400px", margin: "0 auto" }} // Ajuste: más ancha (60%) y más larga (400px)
+            style={{ maxWidth: "80%", maxHeight: "400px", margin: "0 auto" }}
           />
         </div>
       </section>
 
-      {/* Captura 2: Características Diferenciales con tarjetas en 2 filas de 5 */}
       <section className="mb-5">
         <h2 className="text-primary text-center">
           Características Diferenciales
@@ -30,7 +28,6 @@ export const Ecommerce = () => {
           optimizando operaciones internas con software personalizado.
         </p>
         <div className="row text-center mt-4">
-          {/* Fila 1: 5 cartas */}
           <div className="col-md-2 mb-3 me-3">
             <div
               className="card h-100 bg-light p-3"
@@ -78,7 +75,6 @@ export const Ecommerce = () => {
           </div>
         </div>
         <div className="row text-center mt-4">
-          {/* Fila 2: 5 cartas */}
           <div className="col-md-2 mb-3 me-3">
             <div
               className="card h-100 bg-light p-3"
@@ -127,7 +123,6 @@ export const Ecommerce = () => {
         </div>
       </section>
 
-      {/* Captura 3: Servicios de Desarrollo Ecommerce con tarjetas en 3 filas de 3 */}
       <section className="mb-5">
         <h2 className="text-primary text-center">
           Servicios de Desarrollo Ecommerce que Transforman tu Negocio
@@ -224,7 +219,6 @@ export const Ecommerce = () => {
         </div>
       </section>
 
-      {/* Captura 4: Conclusión con imagen (intercambiados texto e imagen) */}
       <section className="mb-5">
         <div className="row align-items-center">
           <div className="col-md-8 order-md-2">
@@ -239,10 +233,10 @@ export const Ecommerce = () => {
           </div>
           <div className="col-md-4 order-md-1">
             <img
-              src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRW5EE28UC7xDtPNf5xGAPgwF_VWgMKzSsWXhPfNc2sdB6W3FJL" // Placeholder, reemplaza con imagen de laptop y cohete
+              src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRW5EE28UC7xDtPNf5xGAPgwF_VWgMKzSsWXhPfNc2sdB6W3FJL"
               alt="Laptop con Cohete"
               className="img-fluid rounded"
-              style={{ maxWidth: "90%", maxHeight: "300px" }} // Ajuste: más ancha (70%) y un poco más larga (300px)
+              style={{ maxWidth: "90%", maxHeight: "300px" }}
             />
           </div>
         </div>

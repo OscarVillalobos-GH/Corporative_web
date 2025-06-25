@@ -12,7 +12,6 @@ export const DesarrolloAplicacionesWeb = () => {
         </p>
       </section>
 
-      {/* Conclusión: Poder del Desarrollo Web (primera sección) */}
       <section className="mb-5">
         <div className="row align-items-center">
           <div className="col-md-6">
@@ -46,7 +45,7 @@ export const DesarrolloAplicacionesWeb = () => {
         </div>
       </section>
 
-      {/* Introducción: ¿Qué es el Desarrollo Web y por qué es importante? */}
+      {/* Introducción:*/}
       <section className="mb-5">
         <h2 className="text-primary">
           ¿Qué es el Desarrollo Web y por qué es importante?
@@ -79,7 +78,6 @@ export const DesarrolloAplicacionesWeb = () => {
         </div>
       </section>
 
-      {/* Secciones con cuadros inspirados en las capturas */}
       <section className="mb-5">
         <h2 className="text-primary">
           Tipos de Aplicaciones Web Más Utilizadas
@@ -179,7 +177,6 @@ export const DesarrolloAplicacionesWeb = () => {
         </div>
       </section>
 
-      {/* Tecnologías Utilizadas en el Desarrollo de Aplicaciones Web */}
       <section className="mb-5">
         <h2 className="text-primary">
           Tecnologías Utilizadas en el Desarrollo de Aplicaciones Web
@@ -190,7 +187,6 @@ export const DesarrolloAplicacionesWeb = () => {
           continuación, exploramos las herramientas más utilizadas.
         </p>
 
-        {/* Lenguajes de Programación */}
         <div className="row align-items-center mb-5">
           <div className="col-md-6">
             <div className="card h-100 bg-light p-3">
@@ -217,7 +213,6 @@ export const DesarrolloAplicacionesWeb = () => {
           </div>
         </div>
 
-        {/* Frameworks Frontend */}
         <div className="row align-items-center mb-5">
           <div className="col-md-6 order-md-1">
             <img
@@ -242,7 +237,6 @@ export const DesarrolloAplicacionesWeb = () => {
           </div>
         </div>
 
-        {/* Frameworks Backend */}
         <div className="row align-items-center mb-5">
           <div className="col-md-6">
             <div className="card h-100 bg-light p-3">
@@ -267,7 +261,6 @@ export const DesarrolloAplicacionesWeb = () => {
           </div>
         </div>
 
-        {/* Bases de Datos */}
         <div className="row align-items-center mb-5">
           <div className="col-md-6 order-md-1">
             <img
@@ -289,7 +282,6 @@ export const DesarrolloAplicacionesWeb = () => {
           </div>
         </div>
 
-        {/* Tecnologías en la Nube */}
         <div className="row align-items-center mb-5">
           <div className="col-md-6">
             <div className="card h-100 bg-light p-3">
