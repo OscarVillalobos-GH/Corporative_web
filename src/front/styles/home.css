@@ -160,3 +160,27 @@ section {
   ); /* Superposición oscura para mejorar legibilidad del texto */
   z-index: -1;
 }
+
+.whatsapp-float {
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+#contact-form {
+  background-color: #d3d3d3;
+  padding: 20px;
+  border-radius: 10px;
+}
+#contact-form .form-control {
+  background-color: #fff;
+  color: #000;
+}
+#contact-form .form-label {
+  font-weight: bold;
+}
+#contact-form .input-group .form-select {
+  background-color: #fff;
+  color: #000;
+}
