@@ -180,6 +180,40 @@ export const Tecnologias = () => {
           </div>
         </div>
       </section>
+      <section className="mb-5 text-center">
+        <h1 className="text-primary mb-4">Metodología Agile (SCRUM)</h1>
+        <p className="lead">
+          Scrum es un proceso en el que se aplican de manera regular un conjunto
+          de buenas prácticas para trabajar colaborativamente, en equipo, y
+          obtener el mejor resultado posible de un proyecto:
+        </p>
+        <div className="mt-4">
+          <img
+            src="https://www.cajmetro.cl/wp-content/uploads/2021/03/agile1.jpg"
+            alt="Ecommerce Personalizado"
+            className="img-fluid rounded"
+            style={{ maxWidth: "90%", maxHeight: "600px", margin: "0 auto" }}
+          />
+        </div>
+      </section>
+
+      {/* Ícono flotante de WhatsApp */}
+      <a
+        href="https://wa.me/56995334317?text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="whatsapp-float"
+        style={{
+          position: "fixed",
+          bottom: "20px",
+          right: "20px",
+          fontSize: "40px",
+          color: "#25D366",
+          textDecoration: "none",
+        }}
+      >
+        <i className="fab fa-whatsapp"></i>
+      </a>
     </div>
   );
 };
