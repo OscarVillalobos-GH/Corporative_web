@@ -13,7 +13,7 @@ import { Tecnologias } from "./pages/Tecnologias";
 import { Sapb1 } from "./pages/sapb1";
 import { Erpservicios } from "./pages/Erpservicios-page";
 import injectContext from "./store/appContext";
-
+import { Analytics } from "./pages/analytics";
 import { Footer } from "./component/footer";
 
 const Layout = () => {
@@ -38,6 +38,7 @@ const Layout = () => {
             <Route element={<ApisIntegraciones />} path="/apis-integraciones" />
             <Route element={<Tecnologias />} path="/tecnologias" />
             <Route element={<Sapb1 />} path="/sapb1" />
+            <Route element={<Analytics />} path="/bi" />
             <Route element={<Erpservicios />} path="/erpservicios-page" />
             <Route element={<h1>Not found!</h1>} />
           </Routes>
