@@ -28,7 +28,7 @@ export const Home = () => {
             
           </p>
           <button className="hero-button">
-            👉 ¡Hablemos de tu proyecto! <span className="arrow">➜</span>
+             ¡Hablemos de tu proyecto! <span className="arrow">➜</span>
           </button>
         </div>
       </div>
