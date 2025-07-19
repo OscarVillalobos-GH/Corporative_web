@@ -11,7 +11,7 @@ import { Ecommerce } from "./pages/Ecommerce";
 import { ApisIntegraciones } from "./pages/ApisIntegraciones";
 import { Tecnologias } from "./pages/Tecnologias";
 import injectContext from "./store/appContext";
-
+import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 
 const Layout = () => {
@@ -24,6 +24,7 @@ const Layout = () => {
     <div>
       <BrowserRouter>
         <ScrollToTop>
+          <Navbar />
           <Routes>
             <Route element={<Home />} path="/" />
             <Route element={<Demo />} path="/demo" />
