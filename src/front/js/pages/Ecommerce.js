@@ -534,6 +534,100 @@ export const Ecommerce = () => {
         </div>
       </section>
 
+      {/* === SECCIÓN PLANES WEB CON WHATSAPP === */}
+      <section className="mb-5 text-center">
+        <h2 className="text-primary mb-4">Planes Web</h2>
+        <div className="row justify-content-center">
+          {/* Starter */}
+          <div className="col-md-4 mb-4">
+            <div className="card h-100 shadow-sm">
+              <div className="card-body d-flex flex-column">
+                <h3>Starter</h3>
+                <p className="display-4 text-success">22 UF</p>
+                <a
+                  href="https://wa.me/56995334317?text=Hola,%20me%20interesa%20el%20Plan%20Starter%20de%20sitio%20web"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-outline-primary mb-3"
+                >
+                  COTIZAR
+                </a>
+                <ul className="list-unstyled text-start flex-grow-1">
+                  <li>✔ Web autoadministrable</li>
+                  <li>✔ 1 Banner slider</li>
+                  <li>✔ 4 Cantidad de páginas</li>
+                  <li>✔ Multidispositivo</li>
+                  <li>✔ Certificado SSL</li>
+                  <li>✔ Capacitación</li>
+                  <li>✘ Integración medios de pago</li>
+                  <li>✘ Carga de productos</li>
+                  <li>✘ Blog</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* ECommerce */}
+          <div className="col-md-4 mb-4">
+            <div className="card h-100 shadow-sm border-primary">
+              <div className="card-body d-flex flex-column">
+                <h3>ECommerce</h3>
+                <p className="display-4 text-success">43 UF</p>
+                <a
+                  href="https://wa.me/56995334317?text=Hola,%20me%20interesa%20el%20Plan%20ECommerce%20de%20sitio%20web"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-primary mb-3"
+                >
+                  COTIZAR
+                </a>
+                <ul className="list-unstyled text-start flex-grow-1">
+                  <li>✔ Web autoadministrable</li>
+                  <li>✔ 4 Banner slider</li>
+                  <li>✔ 7 Cantidad de páginas</li>
+                  <li>✔ Multidispositivo</li>
+                  <li>✔ Certificado SSL</li>
+                  <li>✔ Integración medios de pago</li>
+                  <li>✔ Capacitación</li>
+                  <li>✔ 40 Carga de productos</li>
+                  <li>✔ Blog</li>
+                  <li>✔ Chat vía WhatsApp</li>
+                  <li>✔ Integración Facebook Pixel</li>
+                  <li>✔ Filtro de productos</li>
+                  <li>✔ Carro de compras</li>
+                  <li>✔ Carro de compras abandonado</li>
+                  <li>✔ Integración Google Analytics</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* A Medida */}
+          <div className="col-md-3 mb-4">
+            <div
+              className="card shadow-sm"
+              style={{ backgroundColor: "#f0f4f8" }}
+            >
+              <div className="card-body">
+                <h3 className="text-dark">A Medida</h3>
+                <p className="lead text-muted">PARA EMPRESAS</p>
+                <a
+                  href="https://wa.me/56995334317?text=Hola,%20me%20gustaría%20cotizar%20un%20sitio%20web%20a%20medida"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-success mb-3"
+                >
+                  CONTÁCTANOS
+                </a>
+                <ul className="list-unstyled text-start">
+                  <li>✔ Previo levantamiento</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="mb-5">
         <div className="row align-items-center">
           <div className="col-md-8 order-md-2">
