@@ -14,6 +14,7 @@ import { Sapb1 } from "./pages/sapb1";
 import { Erpservicios } from "./pages/Erpservicios-page";
 import injectContext from "./store/appContext";
 import { Analytics } from "./pages/analytics";
+import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 
 const Layout = () => {
@@ -26,6 +27,7 @@ const Layout = () => {
     <div>
       <BrowserRouter>
         <ScrollToTop>
+          <Navbar />
           <Routes>
             <Route element={<Home />} path="/" />
             <Route element={<Demo />} path="/demo" />
