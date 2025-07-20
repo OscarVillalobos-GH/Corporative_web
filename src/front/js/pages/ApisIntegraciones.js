@@ -1,6 +1,16 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import "../../styles/home.css";
+import APIs from "../../img/APIs.png";
+import apiGif from "../../img/apiGif.gif";
+import apiProcesos from "../../img/apiProcesos.png";
+import AiChatGif from "../../img/AiChatGif.gif";
+import ProtocolosGif from "../../img/ProtocolosGif.gif";
+import lenguajesGif from "../../img/lenguajesGif.gif";
+import BDGif from "../../img/BD-Gif.gif";
+import seguridadGif from "../../img/seguridadGif.gif";
+import cloud from "../../img/cloud.gif";
+import conclusionAPI from "../../img/conclusionAPI.jpg";
 
 export const ApisIntegraciones = () => {
   const form = useRef();
@@ -9,9 +19,8 @@ export const ApisIntegraciones = () => {
     code: "+56",
     name: "Chile",
   });
-  const [phoneNumber, setPhoneNumber] = useState(""); // Estado para el número de teléfono
+  const [phoneNumber, setPhoneNumber] = useState("");
 
-  // Lista completa de países con códigos telefónicos
   const countries = [
     { code: "+93", name: "Afghanistan" },
     { code: "+355", name: "Albania" },
@@ -256,7 +265,6 @@ export const ApisIntegraciones = () => {
     { code: "+263", name: "Zimbabwe" },
   ];
 
-  // Función para validar el formulario
   const validateForm = () => {
     const newErrors = {};
     if (!form.current["service"].value)
@@ -279,7 +287,6 @@ export const ApisIntegraciones = () => {
     return newErrors;
   };
 
-  // Función para enviar el formulario con EmailJS
   const sendEmail = (e) => {
     e.preventDefault();
 
@@ -289,7 +296,6 @@ export const ApisIntegraciones = () => {
       return;
     }
 
-    // Combinar el código del país con el número ingresado antes de enviar
     form.current["phone"].value = `${selectedCountry.code}${phoneNumber}`;
 
     emailjs
@@ -306,7 +312,6 @@ export const ApisIntegraciones = () => {
           setErrors({});
           setSelectedCountry({ code: "+56", name: "Chile" });
           setPhoneNumber("");
-          setShowFormModal(false); // Cierra el modal después de enviar
         },
         (error) => {
           alert("Error al enviar el mensaje, intenta de nuevo.");
@@ -316,790 +321,779 @@ export const ApisIntegraciones = () => {
   };
 
   return (
-    <div className="container mt-5 position-relative">
-      <section className="mb-5">
-        <div className="row align-items-center">
-          <div className="col-md-6">
-            <h1 className="text-primary ">
-              Desarrollo de APIs e Integraciones:
-            </h1>
-            <h2 className="text-primary display-4">
-              Optimiza y Automatiza los Procesos de tu Empresa
-            </h2>
-          </div>
-          <div className="col-md-6">
-            <p>
-              En la era digital, las empresas necesitan conectar sus sistemas,
-              automatizar procesos y mejorar la eficiencia operativa. El
-              desarrollo de APIs e integraciones permite que diferentes
-              plataformas, aplicaciones y bases de datos trabajen juntas de
-              manera fluida, optimizando la productividad y mejorando la
-              experiencia del cliente.
-            </p>
-            <p>
-              Si tu empresa maneja múltiples herramientas digitales, software de
-              terceros o necesita una infraestructura tecnológica más eficiente,
-              contar con APIs bien diseñadas es clave para el éxito. A
-              continuación, exploraremos en detalle qué es el desarrollo de
-              APIs, sus beneficios, aplicaciones empresariales y las tecnologías
-              más utilizadas.
-            </p>
-          </div>
-        </div>
-        <div className="text-center mt-4">
-          <a
-            href="https://wa.me/56995334317?text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-primary me-2"
-          >
-            <i className="fab fa-whatsapp"></i> Escríbenos
-          </a>
-          <button
-            className="btn btn-primary"
-            onClick={() =>
-              window.scrollTo({
-                top: document.body.scrollHeight,
-                behavior: "smooth",
-              })
-            }
-          >
-            Contáctanos
-          </button>
-        </div>
-      </section>
+    <div className="position-relative">
+      {/* Opcional: Espacio para imagen de fondo (puedes agregar una si lo deseas) */}
+      <div
+        className="hero-container"
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100vh",
+          zIndex: 0,
+          backgroundImage: `url(${APIs})`,
+          backgroundSize: "cover",
+        }}
+      ></div>
 
-      <section className="mb-5">
-        <div className="row align-items-center">
-          <div className="col-md-6">
-            <div className="card p-4 border">
-              <h2 className="text-center text-primary mb-4">
-                ¿Qué es el Desarrollo de APIs e Integraciones?
+      {/* Contenido principal */}
+      <div style={{ position: "relative", zIndex: 1, paddingTop: "20px" }}>
+        <section className="mb-5 ecommerce-section">
+          <div className="row align-items-center">
+            {/* Títulos alineados a la izquierda */}
+            <div className="col-md-7">
+              <h1 style={{ color: "#36b0a1", fontWeight: "bold" }}>
+                Desarrollo de APIs e Integraciones:
+              </h1>
+              <h2 style={{ color: "#36b0a1", fontSize: "2.5rem", lineHeight: "1.2" }}>
+                Optimiza y Automatiza los <br />
+                Procesos de tu Empresa
               </h2>
-              <p>
-                Las APIs (Application Programming Interfaces) son interfaces que
-                permiten que diferentes aplicaciones y sistemas se comuniquen
-                entre sí. Funcionan como «puentes digitales» que permiten
-                intercambiar datos y ejecutar funciones sin necesidad de
-                intervención manual.
-              </p>
-              <p>
-                Por otro lado, las integraciones hacen posible que los sistemas
-                trabajen en conjunto de manera eficiente. Por ejemplo, una
-                empresa que usa un software de facturación, un CRM y una
-                plataforma de e-commerce puede integrar estos sistemas mediante
-                APIs para que compartan información en tiempo real.
-              </p>
+            </div>
+
+            {/* Párrafos alineados a la derecha dentro de una tarjeta */}
+            <div className="col-md-4">
+              <div className="card p-4 border">
+                <p>
+                  En la era digital, las empresas necesitan conectar sus sistemas,
+                  automatizar procesos y mejorar la eficiencia operativa. El
+                  desarrollo de APIs e integraciones permite que diferentes
+                  plataformas, aplicaciones y bases de datos trabajen juntas de
+                  manera fluida, optimizando la productividad y mejorando la
+                  experiencia del cliente.
+                </p>
+                <p>
+                  Si tu empresa maneja múltiples herramientas digitales, software de
+                  terceros o necesita una infraestructura tecnológica más eficiente,
+                  contar con APIs bien diseñadas es clave para el éxito. A
+                  continuación, exploraremos en detalle qué es el desarrollo de
+                  APIs, sus beneficios, aplicaciones empresariales y las tecnologías
+                  más utilizadas.
+                </p>
+              </div>
             </div>
           </div>
-          <div className="col-md-6">
-            <div className="card p-4 border">
+
+          {/* Botones centrados al final */}
+          <div className="text-center mt-4">
+            <a
+              href="https://wa.me/56995334317?text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-primary me-2"
+              style={{ backgroundColor: "#36b0a1", borderColor: "#36b0a1" }}
+            >
+              <i className="fab fa-whatsapp"></i> Escríbenos
+            </a>
+            <button
+              className="btn btn-primary"
+              style={{ backgroundColor: "#36b0a1", borderColor: "#36b0a1" }}
+              onClick={() =>
+                window.scrollTo({
+                  top: document.body.scrollHeight,
+                  behavior: "smooth",
+                })
+              }
+            >
+              Contáctanos
+            </button>
+          </div>
+        </section>
+
+        <section className="mb-5 ecommerce-section">
+          <div className="row align-items-center">
+            <div className="col-md-6">
+              <div className="card p-4 border">
+                <h2 style={{ color: "#36b0a1" }} className="text-center mb-4">
+                  ¿Qué es el Desarrollo de APIs e Integraciones?
+                </h2>
+                <p>
+                  Las APIs (Application Programming Interfaces) son interfaces
+                  que permiten que diferentes aplicaciones y sistemas se
+                  comuniquen entre sí. Funcionan como «puentes digitales» que
+                  permiten intercambiar datos y ejecutar funciones sin necesidad
+                  de intervención manual.
+                </p>
+                <p>
+                  Por otro lado, las integraciones hacen posible que los
+                  sistemas trabajen en conjunto de manera eficiente. Por
+                  ejemplo, una empresa que usa un software de facturación, un
+                  CRM y una plataforma de e-commerce puede integrar estos
+                  sistemas mediante APIs para que compartan información en
+                  tiempo real.
+                </p>
+              </div>
+            </div>
+            <div className="col-md-6">
+              <div className="card p-4 border">
+                <img
+                  src={apiGif}
+                  alt="API e Integraciones"
+                  className="img-fluid rounded"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="mb-5 ecommerce-section">
+          <div className="row align-items-center">
+            <div className="col-md-7">
+              <h3 style={{ color: "#36b0a1" }} className="text-center mb-4">
+                El proceso de desarrollo de APIs e integraciones incluye varias
+                etapas:
+              </h3>
+            </div>
+            <div className="col-md-4">
               <img
-                src="https://miro.medium.com/v2/resize:fit:1200/1*Bx32Dh9EHoiuSVTdEm0tJg.gif"
-                alt="API e Integraciones"
+                src={apiProcesos}
+                alt="Proceso de Desarrollo"
                 className="img-fluid rounded"
               />
             </div>
+            <div className="row text-center my-4">
+              <div className="col-md-4 mb-4">
+                <div className="card p-3 border h-100">
+                  <i
+                    className="fas fa-solid fa-book fa-3x"
+                    style={{ color: "#36b0a1" }}
+                  ></i>
+                  <h3 style={{ color: "#36b0a1" }}>
+                    Implementación y documentación:
+                  </h3>
+                  <p>
+                    Se lanza la API y se proporciona documentación clara para
+                    su uso.
+                  </p>
+                </div>
+              </div>
+              <div className="col-md-4 mb-4">
+                <div className="card p-3 border h-100">
+                  <i
+                    className="fas fa-tools fa-3x"
+                    style={{ color: "#36b0a1" }}
+                  ></i>
+                  <h3 style={{ color: "#36b0a1" }}>Mantenimiento y optimización:</h3>
+                  <p>
+                    Se monitorea el rendimiento y se realizan mejoras continuas.
+                  </p>
+                </div>
+              </div>
+              <div className="col-md-4 mb-4">
+                <div className="card p-3 border h-100">
+                  <i
+                    className="fas fa-search fa-3x"
+                    style={{ color: "#36b0a1" }}
+                  ></i>
+                  <h3 style={{ color: "#36b0a1" }}>Análisis de necesidades:</h3>
+                  <p>
+                    Se identifican los sistemas que necesitan comunicarse y los
+                    datos que deben compartirse.
+                  </p>
+                </div>
+              </div>
+              <div className="col-md-6 mb-6">
+                <div className="card p-3 border h-100">
+                  <i
+                    className="fas fa-code fa-3x"
+                    style={{ color: "#36b0a1" }}
+                  ></i>
+                  <h3 style={{ color: "#36b0a1" }}>Diseño y desarrollo de la API:</h3>
+                  <p>
+                    Se crea una API segura, escalable y optimizada para el
+                    rendimiento.
+                  </p>
+                </div>
+              </div>
+              <div className="col-md-6 mb-6">
+                <div className="card p-3 border h-100">
+                  <i
+                    className="fas fa-shield-alt fa-3x"
+                    style={{ color: "#36b0a1" }}
+                  ></i>
+                  <h3 style={{ color: "#36b0a1" }}>
+                    Pruebas de seguridad y compatibilidad:
+                  </h3>
+                  <p>Se validan la integridad y seguridad de los datos.</p>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="mb-5">
-        <div className="row align-items-center">
-          <div className="col-md-7">
-            <h3
-              className="text-center text-primary mb-4"
-              style={{ marginTop: "1rem" }}
-            >
-              El proceso de desarrollo de APIs e integraciones incluye varias
-              etapas:
-            </h3>
-          </div>
-          <div className="col-md-5">
-            <img
-              src="https://www.cio.com/wp-content/uploads/2024/09/3541781-0-69698600-1727678669-iStock-1317706831_800.jpg?quality=50&strip=all&w=1024"
-              alt="Proceso de Desarrollo"
-              className="img-fluid rounded"
-            />
-          </div>
-          <div className="row text-center my-4">
+        <section className="mb-5 ecommerce-section">
+          <h2 style={{ color: "#36b0a1" }} className="text-center mb-4">
+            Beneficios del Desarrollo de APIs para Empresas
+          </h2>
+          <p>
+            Contar con APIs e integraciones bien diseñadas puede transformar la
+            operatividad de una empresa, mejorando la eficiencia y reduciendo
+            costos. Algunos de los beneficios más importantes incluyen:
+          </p>
+          <div className="row text-center">
             <div className="col-md-4 mb-4">
               <div className="card p-3 border h-100">
-                <i className="fas fa-solid fa-book fa-3x text-primary mb-3"></i>
-                <h3 className="text-primary">
-                  Implementación y documentación:
+                <i
+                  className="fas fa-robot fa-3x"
+                  style={{ color: "#36b0a1" }}
+                ></i>
+                <h3 style={{ color: "#36b0a1" }}>Automatización de Procesos:</h3>
+                <p>
+                  Las APIs permiten que los sistemas se comuniquen sin
+                  intervención manual, reduciendo errores y acelerando flujos
+                  de trabajo.
+                </p>
+              </div>
+            </div>
+            <div className="col-md-4 mb-4">
+              <div className="card p-3 border h-100">
+                <i
+                  className="fas fa-users fa-3x"
+                  style={{ color: "#36b0a1" }}
+                ></i>
+                <h3 style={{ color: "#36b0a1" }}>
+                  Mejora en la Experiencia del Cliente:
                 </h3>
                 <p>
-                  Se lanza la API y se proporciona documentación clara para su
-                  uso.
+                  Las integraciones ofrecen servicios rápidos y personalizados,
+                  como pagos en segundos en e-commerce.
                 </p>
               </div>
             </div>
             <div className="col-md-4 mb-4">
               <div className="card p-3 border h-100">
-                <i className="fas fa-tools fa-3x text-primary mb-3"></i>
-                <h3 className="text-primary">Mantenimiento y optimización:</h3>
+                <i
+                  className="fas fa-money-bill-wave fa-3x"
+                  style={{ color: "#36b0a1" }}
+                ></i>
+                <h3 style={{ color: "#36b0a1" }}>Reducción de Costos Operativos:</h3>
                 <p>
-                  Se monitorea el rendimiento y se realizan mejoras continuas.
+                  La automatización minimiza trabajo manual, optimizando
+                  recursos.
                 </p>
               </div>
             </div>
             <div className="col-md-4 mb-4">
               <div className="card p-3 border h-100">
-                <i className="fas fa-search fa-3x text-primary mb-3"></i>
-                <h3 className="text-primary">Análisis de necesidades:</h3>
+                <i
+                  className="fas fa-chart-line fa-3x"
+                  style={{ color: "#36b0a1" }}
+                ></i>
+                <h3 style={{ color: "#36b0a1" }}>Escalabilidad y Flexibilidad:</h3>
                 <p>
-                  Se identifican los sistemas que necesitan comunicarse y los
-                  datos que deben compartirse.
+                  Permite crecer sin restricciones, agregando funcionalidades
+                  y plataformas.
                 </p>
               </div>
             </div>
-            <div className="col-md-6 mb-6">
+            <div className="col-md-4 mb-4">
               <div className="card p-3 border h-100">
-                <i className="fas fa-code fa-3x text-primary mb-3"></i>
-                <h3 className="text-primary">Diseño y desarrollo de la API:</h3>
+                <i
+                  className="fas fa-shield-alt fa-3x"
+                  style={{ color: "#36b0a1" }}
+                ></i>
+                <h3 style={{ color: "#36b0a1" }}>Seguridad y Control de Datos:</h3>
                 <p>
-                  Se crea una API segura, escalable y optimizada para el
-                  rendimiento.
+                  Incluye autenticación, cifrado y control de accesos para
+                  proteger información.
                 </p>
               </div>
             </div>
-            <div className="col-md-6 mb-6">
+            <div className="col-md-4 mb-4">
               <div className="card p-3 border h-100">
-                <i className="fas fa-shield-alt fa-3x text-primary mb-3"></i>
-                <h3 className="text-primary">
-                  Pruebas de seguridad y compatibilidad:
+                <i
+                  className="fas fa-plug fa-3x"
+                  style={{ color: "#36b0a1" }}
+                ></i>
+                <h3 style={{ color: "#36b0a1" }}>
+                  Integración con Software Externo:
                 </h3>
-                <p>Se validan la integridad y seguridad de los datos.</p>
+                <p>
+                  Conecta con CRM, ERP, pasarelas de pago y más para un flujo
+                  eficiente.
+                </p>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="mb-5">
-        <h2 className="text-center text-primary mb-4">
-          Beneficios del Desarrollo de APIs para Empresas
-        </h2>
-        <p>
-          Contar con APIs e integraciones bien diseñadas puede transformar la
-          operatividad de una empresa, mejorando la eficiencia y reduciendo
-          costos. Algunos de los beneficios más importantes incluyen:
-        </p>
-        <div className="row text-center">
-          <div className="col-md-4 mb-4">
-            <div className="card p-3 border h-100">
-              <i className="fas fa-robot fa-3x text-primary mb-3"></i>
-              <h3 className="text-primary">Automatización de Procesos:</h3>
+        <section className="mb-5 ecommerce-section">
+          <div className="row align-items-center">
+            <div className="col-md-6">
+              <img
+                src={AiChatGif}
+                alt="Aplicaciones de APIs"
+                className="img-fluid rounded"
+              />
+            </div>
+            <div className="col-md-6">
               <p>
-                Las APIs permiten que los sistemas se comuniquen sin
-                intervención manual, reduciendo errores y acelerando flujos de
-                trabajo.
+                Las APIs y las integraciones pueden aplicarse en múltiples
+                sectores y mejorar diversos procesos empresariales. Algunas de
+                sus principales aplicaciones incluyen:
               </p>
             </div>
           </div>
-          <div className="col-md-4 mb-4">
-            <div className="card p-3 border h-100">
-              <i className="fas fa-users fa-3x text-primary mb-3"></i>
-              <h3 className="text-primary">
-                Mejora en la Experiencia del Cliente:
-              </h3>
-              <p>
-                Las integraciones ofrecen servicios rápidos y personalizados,
-                como pagos en segundos en e-commerce.
-              </p>
-            </div>
-          </div>
-          <div className="col-md-4 mb-4">
-            <div className="card p-3 border h-100">
-              <i className="fas fa-money-bill-wave fa-3x text-primary mb-3"></i>
-              <h3 className="text-primary">Reducción de Costos Operativos:</h3>
-              <p>
-                La automatización minimiza trabajo manual, optimizando recursos.
-              </p>
-            </div>
-          </div>
-          <div className="col-md-4 mb-4">
-            <div className="card p-3 border h-100">
-              <i className="fas fa-chart-line fa-3x text-primary mb-3"></i>
-              <h3 className="text-primary">Escalabilidad y Flexibilidad:</h3>
-              <p>
-                Permite crecer sin restricciones, agregando funcionalidades y
-                plataformas.
-              </p>
-            </div>
-          </div>
-          <div className="col-md-4 mb-4">
-            <div className="card p-3 border h-100">
-              <i className="fas fa-shield-alt fa-3x text-primary mb-3"></i>
-              <h3 className="text-primary">Seguridad y Control de Datos:</h3>
-              <p>
-                Incluye autenticación, cifrado y control de accesos para
-                proteger información.
-              </p>
-            </div>
-          </div>
-          <div className="col-md-4 mb-4">
-            <div className="card p-3 border h-100">
-              <i className="fas fa-plug fa-3x text-primary mb-3"></i>
-              <h3 className="text-primary">
-                Integración con Software Externo:
-              </h3>
-              <p>
-                Conecta con CRM, ERP, pasarelas de pago y más para un flujo
-                eficiente.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="mb-5">
-        <div className="row align-items-center">
-          <div className="col-md-6">
-            <img
-              src="https://caspiands.com/wp-content/uploads/2024/12/Ai-Chat-gif.gif"
-              alt="Aplicaciones de APIs"
-              className="img-fluid rounded"
-            />
+        <section className="mb-5 ecommerce-section">
+          <div className="row text-center">
+            <div className="col-md-4 mb-4">
+              <div className="card p-3 border h-100">
+                <i
+                  className="fas fa-briefcase fa-3x"
+                  style={{ color: "#36b0a1" }}
+                ></i>
+                <h3 style={{ color: "#36b0a1" }}>
+                  Integraciones con Sistemas ERP y CRM:
+                </h3>
+                <p>Automatiza facturación, gestión de clientes e inventario.</p>
+              </div>
+            </div>
+            <div className="col-md-4 mb-4">
+              <div className="card p-3 border h-100">
+                <i
+                  className="fas fa-shopping-cart fa-3x"
+                  style={{ color: "#36b0a1" }}
+                ></i>
+                <h3 style={{ color: "#36b0a1" }}>
+                  Conexión de Plataformas de Comercio Electrónico:
+                </h3>
+                <p>Actualización de inventarios y procesamiento de pedidos.</p>
+              </div>
+            </div>
+            <div className="col-md-4 mb-4">
+              <div className="card p-3 border h-100">
+                <i
+                  className="fas fa-credit-card fa-3x"
+                  style={{ color: "#36b0a1" }}
+                ></i>
+                <h3 style={{ color: "#36b0a1" }}>
+                  APIs de Pagos y Facturación Electrónica:
+                </h3>
+                <p>Transacciones seguras con pasarelas como PayPal o Stripe.</p>
+              </div>
+            </div>
+            <div className="col-md-4 mb-4">
+              <div className="card p-3 border h-100">
+                <i
+                  className="fas fa-users-cog fa-3x"
+                  style={{ color: "#36b0a1" }}
+                ></i>
+                <h3 style={{ color: "#36b0a1" }}>
+                  Gestión de Recursos Humanos y Nómina:
+                </h3>
+                <p>Conecta talento con nómina y asistencia.</p>
+              </div>
+            </div>
+            <div className="col-md-4 mb-4">
+              <div className="card p-3 border h-100">
+                <i
+                  className="fas fa-chart-pie fa-3x"
+                  style={{ color: "#36b0a1" }}
+                ></i>
+                <h3 style={{ color: "#36b0a1" }}>
+                  Análisis de Datos e Inteligencia de Negocios:
+                </h3>
+                <p>Reportes en tiempo real con herramientas BI.</p>
+              </div>
+            </div>
+            <div className="col-md-4 mb-4">
+              <div className="card p-3 border h-100">
+                <i
+                  className="fas fa-lock fa-3x"
+                  style={{ color: "#36b0a1" }}
+                ></i>
+                <h3 style={{ color: "#36b0a1" }}>Seguridad y Control de Accesos:</h3>
+                <p>Autenticación multifactor y monitoreo de seguridad.</p>
+              </div>
+            </div>
           </div>
-          <div className="col-md-6">
-            <p>
-              Las APIs y las integraciones pueden aplicarse en múltiples
-              sectores y mejorar diversos procesos empresariales. Algunas de sus
-              principales aplicaciones incluyen:
+        </section>
+
+        <section className="mb-5 ecommerce-section">
+          <h2 style={{ color: "#36b0a1" }} className="text-center mb-4">
+            Tecnologías Utilizadas en el Desarrollo de APIs
+          </h2>
+          <p>
+            El desarrollo de APIs requiere el uso de tecnologías avanzadas para
+            garantizar rendimiento, seguridad y escalabilidad. Algunas de las
+            más utilizadas incluyen:
+          </p>
+
+          <div className="row align-items-center mb-4">
+            <div className="col-md-3">
+              <div className="card p-4 border">
+                <img
+                  src={ProtocolosGif}
+                  alt="Protocolos de Comunicación"
+                  className="img-fluid rounded mb-3"
+                />
+              </div>
+            </div>
+            <div className="col-md-9">
+              <div className="card p-4 border">
+                <h3 style={{ color: "#36b0a1" }}>Protocolos de Comunicación</h3>
+                <p>
+                  REST (Representational State Transfer): Es el estándar más
+                  utilizado en APIs, basado en HTTP.
+                </p>
+                <p>
+                  GraphQL: Permite consultas más flexibles y optimizadas en
+                  comparación con REST.
+                </p>
+                <p>
+                  SOAP (Simple Object Access Protocol): Utilizado en sistemas
+                  empresariales que requieren alta seguridad.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="row align-items-center mb-4">
+            <div className="col-md-8">
+              <div className="card p-4 border">
+                <h3 style={{ color: "#36b0a1" }}>Lenguajes de Programación</h3>
+                <p>
+                  JavaScript (Node.js): Ideal para desarrollo backend y APIs
+                  escalables.
+                </p>
+                <p>
+                  Python (Flask, Django): Popular en aplicaciones empresariales
+                  y análisis de datos.
+                </p>
+                <p>
+                  Java y C#: Ampliamente utilizados en entornos corporativos y
+                  software empresarial.
+                </p>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="card p-4 border">
+                <img
+                  src={lenguajesGif}
+                  alt="Lenguajes de Programación"
+                  className="img-fluid rounded mb-3"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="row align-items-center mb-4">
+            <div className="col-md-5">
+              <div className="card p-4 border">
+                <img
+                  src={BDGif}
+                  alt="Bases de Datos"
+                  className="img-fluid rounded mb-3"
+                />
+              </div>
+            </div>
+            <div className="col-md-7">
+              <div className="card p-4 border">
+                <h3 style={{ color: "#36b0a1" }}>Bases de Datos</h3>
+                <p>
+                  PostgreSQL y MySQL: Opciones relacionales para almacenamiento
+                  de datos estructurados.
+                </p>
+                <p>MongoDB: Base de datos NoSQL flexible y escalable.</p>
+                <p>
+                  Firebase: Base de datos en tiempo real utilizada en
+                  aplicaciones móviles y web.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="row align-items-center mb-4">
+            <div className="col-md-8">
+              <div className="card p-4 border">
+                <h3 style={{ color: "#36b0a1" }}>
+                  Herramientas de Seguridad y Autenticación
+                </h3>
+                <p>
+                  OAuth 2.0: Protocolo de autorización seguro para compartir
+                  datos.
+                </p>
+                <p>
+                  JWT (JSON Web Tokens): Sistema de autenticación segura para
+                  APIs.
+                </p>
+                <p>
+                  SSL/TLS: Cifrado de datos en tránsito para proteger la
+                  comunicación.
+                </p>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="card p-4 border">
+                <img
+                  src={seguridadGif}
+                  alt="Seguridad y Autenticación"
+                  className="img-fluid rounded mb-3"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="row align-items-center mb-4">
+            <div className="col-md-4">
+              <div className="card p-4 border">
+                <img
+                  src={cloud}
+                  alt="Infraestructura en la Nube"
+                  className="img-fluid rounded mb-3"
+                />
+              </div>
+            </div>
+            <div className="col-md-8">
+              <div className="card p-4 border">
+                <h3 style={{ color: "#36b0a1" }}>Infraestructura en la Nube</h3>
+                <p>
+                  Amazon Web Services (AWS): Ofrece API Gateway, Lambda y bases
+                  de datos escalables.
+                </p>
+                <p>
+                  Google Cloud: Proporciona herramientas para desarrollo e
+                  implementación de APIs.
+                </p>
+                <p>
+                  Microsoft Azure: Plataforma con soluciones de integración para
+                  entornos empresariales.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="mb-5 ecommerce-section">
+          <div
+            className="card p-4 border"
+            style={{
+              backgroundImage: `url(${conclusionAPI})`,
+              backgroundSize: "cover",
+              color: "white",
+            }}
+          >
+            <h2 style={{ color: "#36b0a1" }} className="mb-4">
+              ¿Por Qué Contratar un Servicio de Desarrollo de APIs?
+            </h2>
+            <p style={{ color: "#FFFFF0" }}>
+              El desarrollo de APIs e integraciones es una inversión estratégica
+              que mejora la eficiencia operativa y la competitividad de una
+              empresa. Contratar un servicio especializado ofrece:
+            </p>
+            <ul className="list-unstyled">
+              <li className="mb-2">
+                <strong>1.</strong> Diseño de APIs escalables y seguras.
+              </li>
+              <li className="mb-2">
+                <strong>2.</strong> Automatización de procesos para mayor
+                eficiencia.
+              </li>
+              <li className="mb-2">
+                <strong>3.</strong> Integración con software existente sin
+                interrupciones.
+              </li>
+              <li className="mb-2">
+                <strong>4.</strong> Protección avanzada contra ciberataques y
+                vulnerabilidades.
+              </li>
+              <li className="mb-2">
+                <strong>5.</strong> Mantenimiento y optimización continua.
+              </li>
+            </ul>
+            <h2 style={{ color: "#36b0a1" }} className="mb-4 mt-4">
+              Conclusión
+            </h2>
+            <p style={{ color: "#FFFFF0" }}>
+              El desarrollo de APIs e integraciones es fundamental para cualquier
+              empresa que busque optimizar procesos, mejorar la experiencia del
+              cliente y aumentar la eficiencia operativa. Al conectar sistemas,
+              automatizar tareas y garantizar la seguridad de los datos, las
+              APIs permiten a las empresas crecer y adaptarse a las nuevas
+              exigencias del mercado.
+            </p>
+            <p style={{ color: "#FFFFF0" }}>
+              Si deseas transformar tu empresa con soluciones tecnológicas
+              avanzadas, un equipo experto en desarrollo de APIs puede ayudarte
+              a diseñar e implementar integraciones eficientes y seguras.
+            </p>
+            <p className="text-center" style={{ color: "#FFFFF0" }}>
+              ¡Contáctanos hoy y descubre cómo las APIs pueden impulsar tu
+              negocio al siguiente nivel!
             </p>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="mb-5">
-        <div className="row text-center">
-          <div className="col-md-4 mb-4">
-            <div className="card p-3 border h-100">
-              <i className="fas fa-briefcase fa-3x text-primary mb-3"></i>
-              <h3 className="text-primary">
-                Integraciones con Sistemas ERP y CRM:
-              </h3>
-              <p>Automatiza facturación, gestión de clientes e inventario.</p>
-            </div>
-          </div>
-          <div className="col-md-4 mb-4">
-            <div className="card p-3 border h-100">
-              <i className="fas fa-shopping-cart fa-3x text-primary mb-3"></i>
-              <h3 className="text-primary">
-                Conexión de Plataformas de Comercio Electrónico:
-              </h3>
-              <p>Actualización de inventarios y procesamiento de pedidos.</p>
-            </div>
-          </div>
-          <div className="col-md-4 mb-4">
-            <div className="card p-3 border h-100">
-              <i className="fas fa-credit-card fa-3x text-primary mb-3"></i>
-              <h3 className="text-primary">
-                APIs de Pagos y Facturación Electrónica:
-              </h3>
-              <p>Transacciones seguras con pasarelas como PayPal o Stripe.</p>
-            </div>
-          </div>
-          <div className="col-md-4 mb-4">
-            <div className="card p-3 border h-100">
-              <i className="fas fa-users-cog fa-3x text-primary mb-3"></i>
-              <h3 className="text-primary">
-                Gestión de Recursos Humanos y Nómina:
-              </h3>
-              <p>Conecta talento con nómina y asistencia.</p>
-            </div>
-          </div>
-          <div className="col-md-4 mb-4">
-            <div className="card p-3 border h-100">
-              <i className="fas fa-chart-pie fa-3x text-primary mb-3"></i>
-              <h3 className="text-primary">
-                Análisis de Datos e Inteligencia de Negocios:
-              </h3>
-              <p>Reportes en tiempo real con herramientas BI.</p>
-            </div>
-          </div>
-          <div className="col-md-4 mb-4">
-            <div className="card p-3 border h-100">
-              <i className="fas fa-lock fa-3x text-primary mb-3"></i>
-              <h3 className="text-primary">Seguridad y Control de Accesos:</h3>
-              <p>Autenticación multifactor y monitoreo de seguridad.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="mb-5">
-        <h2 className="text-center text-primary mb-4">
-          Tecnologías Utilizadas en el Desarrollo de APIs
-        </h2>
-        <p>
-          El desarrollo de APIs requiere el uso de tecnologías avanzadas para
-          garantizar rendimiento, seguridad y escalabilidad. Algunas de las más
-          utilizadas incluyen:
-        </p>
-
-        <div className="row align-items-center mb-4">
-          <div className="col-md-3">
-            <div className="card p-4 border">
-              <img
-                src="https://static.wixstatic.com/media/6b73e9_fd5964a3da3943899614f0dc0b079ab4~mv2.gif"
-                alt="Protocolos de Comunicación"
-                className="img-fluid rounded mb-3"
-              />
-            </div>
-          </div>
-          <div className="col-md-9">
-            <div className="card p-4 border">
-              <h3 className="text-primary">Protocolos de Comunicación</h3>
-              <p>
-                REST (Representational State Transfer): Es el estándar más
-                utilizado en APIs, basado en HTTP.
-              </p>
-              <p>
-                GraphQL: Permite consultas más flexibles y optimizadas en
-                comparación con REST.
-              </p>
-              <p>
-                SOAP (Simple Object Access Protocol): Utilizado en sistemas
-                empresariales que requieren alta seguridad.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="row align-items-center mb-4">
-          <div className="col-md-8">
-            <div className="card p-4 border">
-              <h3 className="text-primary">Lenguajes de Programación</h3>
-              <p>
-                JavaScript (Node.js): Ideal para desarrollo backend y APIs
-                escalables.
-              </p>
-              <p>
-                Python (Flask, Django): Popular en aplicaciones empresariales y
-                análisis de datos.
-              </p>
-              <p>
-                Java y C#: Ampliamente utilizados en entornos corporativos y
-                software empresarial.
-              </p>
-            </div>
-          </div>
-          <div className="col-md-4">
-            <div className="card p-4 border">
-              <img
-                src="https://i.pinimg.com/originals/79/9e/0d/799e0d7779f6ea6c3a89885ff60c55af.gif"
-                alt="Lenguajes de Programación"
-                className="img-fluid rounded mb-3"
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* Bases de Datos */}
-        <div className="row align-items-center mb-4">
-          <div className="col-md-5">
-            <div className="card p-4 border">
-              <img
-                src="https://static.wixstatic.com/media/11c347_e374bd0b001344178df52eec5d51fe11~mv2.gif"
-                alt="Bases de Datos"
-                className="img-fluid rounded mb-3"
-              />
-            </div>
-          </div>
-          <div className="col-md-7">
-            <div className="card p-4 border">
-              <h3 className="text-primary">Bases de Datos</h3>
-              <p>
-                PostgreSQL y MySQL: Opciones relacionales para almacenamiento de
-                datos estructurados.
-              </p>
-              <p>MongoDB: Base de datos NoSQL flexible y escalable.</p>
-              <p>
-                Firebase: Base de datos en tiempo real utilizada en aplicaciones
-                móviles y web.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="row align-items-center mb-4">
-          <div className="col-md-8">
-            <div className="card p-4 border">
-              <h3 className="text-primary">
-                Herramientas de Seguridad y Autenticación
-              </h3>
-              <p>
-                OAuth 2.0: Protocolo de autorización seguro para compartir
-                datos.
-              </p>
-              <p>
-                JWT (JSON Web Tokens): Sistema de autenticación segura para
-                APIs.
-              </p>
-              <p>
-                SSL/TLS: Cifrado de datos en tránsito para proteger la
-                comunicación.
-              </p>
-            </div>
-          </div>
-          <div className="col-md-4">
-            <div className="card p-4 border">
-              <img
-                src="https://saludoccidentecapacita.cl/pluginfile.php/70541/course/overviewfiles/gobierno.gif"
-                alt="Seguridad y Autenticación"
-                className="img-fluid rounded mb-3"
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* Infraestructura en la Nube */}
-        <div className="row align-items-center mb-4">
-          <div className="col-md-4">
-            <div className="card p-4 border">
-              <img
-                src="https://servidoresparasistemas.mx/wp-content/uploads/2023/11/cloud.gif"
-                alt="Infraestructura en la Nube"
-                className="img-fluid rounded mb-3"
-              />
-            </div>
-          </div>
-          <div className="col-md-8">
-            <div className="card p-4 border">
-              <h3 className="text-primary">Infraestructura en la Nube</h3>
-              <p>
-                Amazon Web Services (AWS): Ofrece API Gateway, Lambda y bases de
-                datos escalables.
-              </p>
-              <p>
-                Google Cloud: Proporciona herramientas para desarrollo e
-                implementación de APIs.
-              </p>
-              <p>
-                Microsoft Azure: Plataforma con soluciones de integración para
-                entornos empresariales.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="mb-5">
-        <div
-          className="card p-4 border"
-          style={{
-            backgroundImage:
-              'url("https://www.shutterstock.com/image-photo/businessman-using-laptop-api-icon-600nw-2495953041.jpg")',
-            backgroundSize: "cover",
-            color: "white",
-          }}
-        >
-          <h2 className="text-primary mb-4">
-            ¿Por Qué Contratar un Servicio de Desarrollo de APIs?
+        <section className="mb-5 ecommerce-section" id="contact-form">
+          <h2 style={{ color: "#ffff" }} className="text-center mb-4">
+            Contáctanos
           </h2>
-          <p style={{ color: "#FFFFF0" }}>
-            El desarrollo de APIs e integraciones es una inversión estratégica
-            que mejora la eficiencia operativa y la competitividad de una
-            empresa. Contratar un servicio especializado ofrece:
-          </p>
-          <ul className="list-unstyled">
-            <li className="mb-2">
-              <strong>1.</strong> Diseño de APIs escalables y seguras.
-            </li>
-            <li className="mb-2">
-              <strong>2.</strong> Automatización de procesos para mayor
-              eficiencia.
-            </li>
-            <li className="mb-2">
-              <strong>3.</strong> Integración con software existente sin
-              interrupciones.
-            </li>
-            <li className="mb-2">
-              <strong>4.</strong> Protección avanzada contra ciberataques y
-              vulnerabilidades.
-            </li>
-            <li className="mb-2">
-              <strong>5.</strong> Mantenimiento y optimización continua.
-            </li>
-          </ul>
-          <h2 className="text-primary mb-4 mt-4">Conclusión</h2>
-          <p style={{ color: "#FFFFF0" }}>
-            El desarrollo de APIs e integraciones es fundamental para cualquier
-            empresa que busque optimizar procesos, mejorar la experiencia del
-            cliente y aumentar la eficiencia operativa. Al conectar sistemas,
-            automatizar tareas y garantizar la seguridad de los datos, las APIs
-            permiten a las empresas crecer y adaptarse a las nuevas exigencias
-            del mercado.
-          </p>
-          <p style={{ color: "#FFFFF0" }}>
-            Si deseas transformar tu empresa con soluciones tecnológicas
-            avanzadas, un equipo experto en desarrollo de APIs puede ayudarte a
-            diseñar e implementar integraciones eficientes y seguras.
-          </p>
-          <p className="text-center" style={{ color: "#FFFFF0" }}>
-            ¡Contáctanos hoy y descubre cómo las APIs pueden impulsar tu negocio
-            al siguiente nivel!
-          </p>
-        </div>
-      </section>
-
-      {/* Formulario de Contacto */}
-      <section className="mb-5" id="contact-form">
-        <h2 className="text-primary text-center mb-4">Contáctanos</h2>
-        <div className="row justify-content-center">
-          <div className="col-md-6">
-            <form
-              ref={form}
-              onSubmit={sendEmail}
-              style={{
-                backgroundColor: "#D3D3D3",
-                padding: "20px",
-                borderRadius: "10px",
-              }}
-            >
-              <div className="mb-3">
-                <label htmlFor="service" className="form-label text-dark">
-                  Seleccione el servicio a consultar
-                </label>
-                <select
-                  className="form-select"
-                  id="service"
-                  name="service"
-                  required
-                >
-                  <option value="">Selecciona</option>
-                  <option>
-                    ERP (SAP BUSINESS ONE, ASESORIAS Y MIGRACIONES)
-                  </option>
+          <div className="row justify-content-center">
+            <div className="col-md-6">
+              <form ref={form} onSubmit={sendEmail} className="contact-form">
+                <select name="service" required>
+                  <option value="">Seleccione el servicio a consultar</option>
+                  <option>ERP (SAP BUSINESS ONE, ASESORIAS Y MIGRACIONES)</option>
                   <option>Consultoría tecnológica</option>
                   <option>Data AnalIsis - Integración entre sistemas</option>
                   <option>Visualización de Datos</option>
                   <option>Desarrollo sofware</option>
                   <option>E-commerce y Marketplace</option>
-                  <option>
-                    Mantención y soporte de infraestructura tecnológica
-                  </option>
+                  <option>Mantención y soporte de infraestructura tecnológica</option>
                   <option>Migración a la nube</option>
                   <option>Seguridad de la informacion</option>
                   <option>Aplicaciones web</option>
                   <option>Otros</option>
                 </select>
-                {errors.service && (
-                  <p style={{ color: "#FF0000" }}>{errors.service}</p>
-                )}
-              </div>
+                {errors.service && <p style={{ color: "#FF0000" }}>{errors.service}</p>}
 
-              <div className="mb-3">
-                <label htmlFor="name" className="form-label text-dark">
-                  Nombre completo
-                </label>
                 <input
                   type="text"
-                  className="form-control"
-                  id="name"
                   name="name"
+                  placeholder="Nombre completo*"
                   required
                 />
-                {errors.name && (
-                  <p style={{ color: "#FF0000" }}>{errors.name}</p>
-                )}
-              </div>
+                {errors.name && <p style={{ color: "#FF0000" }}>{errors.name}</p>}
 
-              <div className="mb-3">
-                <label htmlFor="phone" className="form-label text-dark">
-                  Teléfono
-                </label>
-                <div className="input-group">
-                  <select
-                    className="form-select"
-                    style={{ maxWidth: "150px" }}
-                    value={selectedCountry.name}
-                    onChange={(e) => {
-                      const country = countries.find(
-                        (c) => c.name === e.target.value
-                      );
-                      setSelectedCountry(
-                        country || { code: "+56", name: "Chile" }
-                      );
-                      setPhoneNumber(""); // Resetea el número al cambiar el país
-                    }}
-                  >
-                    {countries.map((country) => (
-                      <option key={country.code} value={country.name}>
-                        {country.name}
-                      </option>
-                    ))}
-                  </select>
+                <div className="form-row">
+                  <div className="input-group">
+                    <select
+                      className="form-select"
+                      style={{ maxWidth: "150px" }}
+                      value={selectedCountry.name}
+                      onChange={(e) => {
+                        const country = countries.find((c) => c.name === e.target.value);
+                        setSelectedCountry(country || { code: "+56", name: "Chile" });
+                        setPhoneNumber("");
+                      }}
+                    >
+                      {countries.map((country) => (
+                        <option key={country.code} value={country.name}>
+                          {country.name}
+                        </option>
+                      ))}
+                    </select>
+                    <input
+                      type="tel"
+                      className="form-control"
+                      id="phone"
+                      name="phone"
+                      value={phoneNumber}
+                      onChange={(e) => setPhoneNumber(e.target.value)}
+                      placeholder="Número"
+                      required
+                    />
+                  </div>
+                  {errors.phone && <p style={{ color: "#FF0000" }}>{errors.phone}</p>}
+                </div>
+
+                <div className="form-row">
                   <input
-                    type="tel"
-                    className="form-control"
-                    id="phone"
-                    name="phone"
-                    value={phoneNumber}
-                    onChange={(e) => setPhoneNumber(e.target.value)}
-                    placeholder="Número"
+                    type="email"
+                    name="email"
+                    placeholder="Correo corporativo*"
                     required
                   />
+                  {errors.email && <p style={{ color: "#FF0000" }}>{errors.email}</p>}
                 </div>
-                {errors.phone && (
-                  <p style={{ color: "#FF0000" }}>{errors.phone}</p>
-                )}
-              </div>
 
-              <div className="mb-3">
-                <label htmlFor="email" className="form-label text-dark">
-                  Correo corporativo
-                </label>
-                <input
-                  type="email"
-                  className="form-control"
-                  id="email"
-                  name="email"
-                  required
-                />
-                {errors.email && (
-                  <p style={{ color: "#FF0000" }}>{errors.email}</p>
-                )}
-              </div>
+                <div className="form-row">
+                  <input
+                    type="text"
+                    name="company"
+                    placeholder="Nombre de la empresa*"
+                    required
+                  />
+                  {errors.company && <p style={{ color: "#FF0000" }}>{errors.company}</p>}
+                </div>
 
-              <div className="mb-3">
-                <label htmlFor="company" className="form-label text-dark">
-                  Nombre de la empresa
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="company"
-                  name="company"
-                  required
-                />
-                {errors.company && (
-                  <p style={{ color: "#FF0000" }}>{errors.company}</p>
-                )}
-              </div>
+                <div className="form-row">
+                  <input
+                    type="text"
+                    name="position"
+                    placeholder="Cargo*"
+                    required
+                  />
+                  {errors.position && <p style={{ color: "#FF0000" }}>{errors.position}</p>}
+                </div>
 
-              <div className="mb-3">
-                <label htmlFor="position" className="form-label text-dark">
-                  Cargo
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="position"
-                  name="position"
-                  required
-                />
-                {errors.position && (
-                  <p style={{ color: "#FF0000" }}>{errors.position}</p>
-                )}
-              </div>
+                <div className="form-row">
+                  <select name="industry" required>
+                    <option value="">Seleccione la industria*</option>
+                    <option>Agricultura</option>
+                    <option>Agua y gas</option>
+                    <option>Alimentación</option>
+                    <option>Automotriz</option>
+                    <option>Banca e inversiones</option>
+                    <option>Comercio y retail</option>
+                    <option>Comunicaciones (medios y tecnología)</option>
+                    <option>Construcción</option>
+                    <option>Educación</option>
+                    <option>Energía</option>
+                    <option>Hotelería y turismo</option>
+                    <option>Industria química</option>
+                    <option>Mercado de capitales</option>
+                    <option>Mineria</option>
+                    <option>Producción</option>
+                    <option>Salud</option>
+                    <option>Seguros</option>
+                    <option>Servicios públicos</option>
+                    <option>Telecomunicaciones</option>
+                    <option>Transporte</option>
+                    <option>Textiles</option>
+                    <option>Productos varios</option>
+                    <option>Emprendimiento personal</option>
+                    <option>Otra</option>
+                  </select>
+                  {errors.industry && <p style={{ color: "#FF0000" }}>{errors.industry}</p>}
+                </div>
 
-              <div className="mb-3">
-                <label htmlFor="industry" className="form-label text-dark">
-                  Seleccione la industria
-                </label>
-                <select
-                  className="form-select"
-                  id="industry"
-                  name="industry"
-                  required
-                >
-                  <option value="">Selecciona</option>
-                  <option>Agricultura</option>
-                  <option>Agua y gas</option>
-                  <option>Alimentación</option>
-                  <option>Automotriz</option>
-                  <option>Banca e inversiones</option>
-                  <option>Comercio y retail</option>
-                  <option>Comunicaciones (medios y tecnología)</option>
-                  <option>Construcción</option>
-                  <option>Educación</option>
-                  <option>Energía</option>
-                  <option>Hotelería y turismo</option>
-                  <option>Industria química</option>
-                  <option>Mercado de capitales</option>
-                  <option>Mineria</option>
-                  <option>Producción</option>
-                  <option>Salud</option>
-                  <option>Seguros</option>
-                  <option>Servicios públicos</option>
-                  <option>Telecomunicaciones</option>
-                  <option>Transporte</option>
-                  <option>Textiles</option>
-                  <option>Productos varios</option>
-                  <option>Emprendimiento personal</option>
-                  <option>Otra</option>
-                </select>
-                {errors.industry && (
-                  <p style={{ color: "#FF0000" }}>{errors.industry}</p>
-                )}
-              </div>
+                <div className="form-row">
+                  <select name="employees" required>
+                    <option value="">Cantidad de empleados*</option>
+                    <option>1 - 49</option>
+                    <option>50 - 99</option>
+                    <option>100 - 499</option>
+                    <option>1000 o mas</option>
+                  </select>
+                  {errors.employees && <p style={{ color: "#FF0000" }}>{errors.employees}</p>}
+                </div>
 
-              <div className="mb-3">
-                <label htmlFor="employees" className="form-label text-dark">
-                  Cantidad de empleados
-                </label>
-                <select
-                  className="form-select"
-                  id="employees"
-                  name="employees"
-                  required
-                >
-                  <option value="">Selecciona</option>
-                  <option>1 - 49</option>
-                  <option>50 - 99</option>
-                  <option>100 - 499</option>
-                  <option>1000 o mas</option>
-                </select>
-                {errors.employees && (
-                  <p style={{ color: "#FF0000" }}>{errors.employees}</p>
-                )}
-              </div>
-
-              <div className="mb-3">
-                <label htmlFor="message" className="form-label text-dark">
-                  Mensaje
-                </label>
                 <textarea
-                  className="form-control"
-                  id="message"
                   name="message"
-                  rows="4"
+                  placeholder="Mensaje"
                   required
                 ></textarea>
-                {errors.message && (
-                  <p style={{ color: "#FF0000" }}>{errors.message}</p>
-                )}
-              </div>
+                {errors.message && <p style={{ color: "#FF0000" }}>{errors.message}</p>}
 
-              <button type="submit" className="btn btn-primary">
-                Enviar
-              </button>
-            </form>
+                <button type="submit" className="submit-button">
+                  ENVIAR
+                </button>
+              </form>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Ícono flotante de WhatsApp */}
-      <a
-        href="https://wa.me/56995334317?text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="whatsapp-float"
-        style={{
-          position: "fixed",
-          bottom: "20px",
-          right: "20px",
-          fontSize: "40px",
-          color: "#25D366",
-          textDecoration: "none",
-        }}
-      >
-        <i className="fab fa-whatsapp"></i>
-      </a>
+        <a
+          href="https://wa.me/56995334317?text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="whatsapp-float"
+          style={{
+            position: "fixed",
+            bottom: "20px",
+            right: "20px",
+            fontSize: "40px",
+            color: "#25D366",
+            textDecoration: "none",
+          }}
+        >
+          <i className="fab fa-whatsapp"></i>
+        </a>
+      </div>
     </div>
   );
 };
