@@ -639,15 +639,6 @@ export const DesarrolloAplicacionesWeb = () => {
           </div>
 
           <div className="row align-items-center mb-4">
-            <div className="col-md-4">
-              <div className="card p-4 border">
-                <img
-                  src={baseDatos}
-                  alt="Bases de Datos"
-                  className="img-fluid rounded mb-3"
-                />
-              </div>
-            </div>
             <div className="col-md-8">
               <div className="card p-4 border">
                 <h3 style={{ color: "#36b0a1" }}>Bases de Datos</h3>
@@ -655,6 +646,15 @@ export const DesarrolloAplicacionesWeb = () => {
                 <p> MySQL: Popular y relacional.</p>
                 <p> PostgreSQL: Avanzado con estructuras complejas.</p>
                 <p> MongoDB: NoSQL para grandes volúmenes de datos.</p>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="card p-4 border">
+                <img
+                  src={baseDatos}
+                  alt="Bases de Datos"
+                  className="img-fluid rounded mb-3"
+                />
               </div>
             </div>
           </div>
