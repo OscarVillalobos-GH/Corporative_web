@@ -343,10 +343,10 @@ export const ApisIntegraciones = () => {
           <div className="row align-items-center">
             {/* Títulos alineados a la izquierda */}
             <div className="col-md-7">
-              <h1 style={{ color: "#36b0a1", fontWeight: "bold" }}>
+              <h1 style={{ color: "#ffff", fontWeight: "bold" }}>
                 Desarrollo de APIs e Integraciones:
               </h1>
-              <h2 style={{ color: "#36b0a1", fontSize: "2.5rem", lineHeight: "1.2" }}>
+              <h2 style={{ color: "#ffff", fontSize: "2.5rem", lineHeight: "1.2" }}>
                 Optimiza y Automatiza los <br />
                 Procesos de tu Empresa
               </h2>
