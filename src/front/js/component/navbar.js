@@ -12,10 +12,15 @@ export const Navbar = () => {
 				</Link>
 			</div>
 			<ul className="navbar-links">
-				<li><Link to="/apis-integraciones">Business Intelligence</Link></li>
+
+				<li><Link to="/erpservicios-page">ERP Servicios</Link></li>
+				<li><Link to="/sapb1">SAP B1</Link></li>
+				<li><Link to="/bi">Business Intelligence</Link></li>
+				<li><Link to="/apis-integraciones">Integraciones-APIs</Link></li>
 				<li><Link to="/desarrollo-aplicaciones-web">Desarrollo Web</Link></li>
 				<li><Link to="/tecnologias">Tecnologías</Link></li>
-				<li><Link to="/ecommerce">Sobre Nosotros</Link></li>
+				<li><Link to="/ecommerce">ecommerce</Link></li>
+				<li><Link to="/aboutus">Nosotros</Link></li>
 				<li>
 					<Link to="/contact" className="contact-button">Contacto</Link>
 				</li>

@@ -61,9 +61,14 @@ export const Sapb1 = () => {
 
   return (
     <section style={{ padding: "40px", backgroundColor: "#f4f4f4", fontFamily: "Arial, sans-serif" }}>
-      <h2 style={{ textAlign: "center", fontSize: "2rem", marginBottom: "30px" }}>
-        SAP Business One: el ERP para PYMES
-      </h2>
+    <h2 style={{ 
+      textAlign: "center", 
+      fontSize: "2rem", 
+      marginBottom: "30px", 
+      color: "#007acc"  // azul profesional
+    }}>
+      SAP Business One: el ERP para PYMES
+    </h2>
 
       <div style={{ maxWidth: "800px", margin: "0 auto", marginBottom: "30px", lineHeight: "1.6", fontSize: "16px" }}>
         <p>

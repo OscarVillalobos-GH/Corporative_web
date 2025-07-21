@@ -62,9 +62,15 @@ export const Analytics = () => {
 
   return (
     <section className="erp-page" style={{ padding: "40px", backgroundColor: "#f9f9f9" }}>
-      <h2 style={{ textAlign: "center", fontSize: "2rem", marginBottom: "30px" }}>
-        Soluciones para Business Analytics
-      </h2>
+      
+    <h2 style={{ 
+          textAlign: "center", 
+          fontSize: "2rem", 
+          marginBottom: "30px", 
+          color: "#007acc"  // azul profesional
+        }}>
+          Soluciones para Business Analytics
+        </h2>
 
       <div
         style={{

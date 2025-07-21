@@ -32,7 +32,15 @@ export const Erpservicios = () => {
 
   return (
     <section className="erp-page" style={{ padding: "40px", backgroundColor: "#f9f9f9" }}>
-      <h2 className="text-center mb-5">Nuestros Servicios ERP</h2>
+
+      <h2 style={{ 
+      textAlign: "center", 
+      fontSize: "2rem", 
+      marginBottom: "30px", 
+      color: "#007acc"  // azul profesional
+    }}>
+      Nuestros Servicios ERP
+    </h2>
 
       <div
         className="services-container"

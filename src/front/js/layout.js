@@ -14,6 +14,7 @@ import { Sapb1 } from "./pages/sapb1";
 import { Erpservicios } from "./pages/Erpservicios-page";
 import injectContext from "./store/appContext";
 import { Analytics } from "./pages/analytics";
+import { SobreNosotros } from "./pages/SobreNosotros";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 
@@ -42,6 +43,8 @@ const Layout = () => {
             <Route element={<Sapb1 />} path="/sapb1" />
             <Route element={<Analytics />} path="/bi" />
             <Route element={<Erpservicios />} path="/erpservicios-page" />
+            <Route element={<SobreNosotros />} path="/aboutus" />
+            
             <Route element={<h1>Not found!</h1>} />
           </Routes>
           <Footer />
