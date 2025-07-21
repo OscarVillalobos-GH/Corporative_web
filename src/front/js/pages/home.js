@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import "../../styles/home.css";
 import heroImage from "../../img/fondo.jpg";
@@ -132,32 +132,6 @@ export const Home = () => {
       <section className="services-section">
         <h2 className="section-title">¿QUÉ OFRECEMOS?</h2>
         <div className="cards-container">
-
-          <div className="service-card">
-            <div className="icon-circle">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="icon"
-                viewBox="0 0 64 64"
-                fill="none"
-                stroke="#36b0a1"
-                strokeWidth="3"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <rect x="8" y="12" width="48" height="32" rx="2" ry="2" />
-                <line x1="2" y1="48" x2="62" y2="48" />
-                <line x1="22" y1="48" x2="22" y2="52" />
-                <line x1="42" y1="48" x2="42" y2="52" />
-              </svg>
-            </div>
-            <h3>Consultoria ERP y BI</h3>
-            <p>
-            Bindamos apoyo en mejorar la experiencia con SAP Business One, tanto a nivel de procesos como de reporteria. Generando dashboard dinamicos,
-            reportes a midida con Crystal report o escalando a Power BI una poderosa herramienta para la construccion de reportes de gestión.
-            </p>
-          </div>
-
           <div className="service-card">
             <div className="icon-circle">
               <svg
@@ -181,7 +155,6 @@ export const Home = () => {
               Diseñamos y desarrollamos soluciones digitales personalizadas que se ajustan a las necesidades específicas de tu negocio. Utilizamos tecnología moderna, buenas prácticas y un equipo comprometido con la calidad y la innovación.
             </p>
           </div>
-
           <div className="service-card">
             <div className="icon-circle">
               <svg
@@ -222,7 +195,8 @@ export const Home = () => {
               <option value="">Seleccione el servicio a consultar</option>
               <option>ERP (SAP BUSINESS ONE, ASESORIAS Y MIGRACIONES)</option>
               <option>Consultoría tecnológica</option>
-              <option>Data Analisis-Business Intelligence</option>
+              <option>Data AnalIsis - Integración entre sistemas</option>
+              <option>Visualización de Datos</option>
               <option>Desarrollo sofware</option>
               <option>E-commerce y Marketplace</option>
               <option>Mantención y soporte de infraestructura tecnológica</option>
