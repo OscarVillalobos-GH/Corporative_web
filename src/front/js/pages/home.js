@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import emailjs from "@emailjs/browser";
 import "../../styles/home.css";
 import heroImage from "../../img/fondo.jpg";

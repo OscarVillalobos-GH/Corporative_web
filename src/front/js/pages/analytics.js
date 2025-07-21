@@ -67,7 +67,7 @@ export const Analytics = () => {
           textAlign: "center", 
           fontSize: "2rem", 
           marginBottom: "30px", 
-          color: "#007acc"  // azul profesional
+          color: "#36b0a1" 
         }}>
           Soluciones para Business Analytics
         </h2>

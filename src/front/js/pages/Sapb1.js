@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import "../../styles/home.css";
 
 import SAP_one from "../../img/07_finanzas.png";
@@ -65,7 +65,7 @@ export const Sapb1 = () => {
       textAlign: "center", 
       fontSize: "2rem", 
       marginBottom: "30px", 
-      color: "#007acc"  // azul profesional
+      color: "#36b0a1" 
     }}>
       SAP Business One: el ERP para PYMES
     </h2>

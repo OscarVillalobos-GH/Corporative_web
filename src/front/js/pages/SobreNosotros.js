@@ -40,7 +40,7 @@ export const SobreNosotros = () => {
         textAlign: "center",
         fontSize: "2rem",
         marginBottom: "30px",
-        color: "#007acc"
+        color: "#36b0a1" 
       }}>
         Sobre Nosotros
       </h2>
@@ -69,7 +69,7 @@ export const SobreNosotros = () => {
           textAlign: "center",
           fontSize: "1.8rem",
           marginBottom: "20px",
-          color: "#007acc"
+          color: "#36b0a1" 
         }}
       >
         Nuestro Equipo
