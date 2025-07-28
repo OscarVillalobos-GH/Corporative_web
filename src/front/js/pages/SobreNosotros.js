@@ -8,9 +8,9 @@ export const SobreNosotros = () => {
     {
       id: 1,
       name: "Alejandro Arraga",
-      role: "Desarrollador",
+      role: "Desarrollador Full-Stack Developer",
       image: alejandro,
-      skills: ["SQL Server", "PostgreSQL", "HANA DB", "MySQL"]
+      skills: ["SQL Server", "PostgreSQL", "MySQL", "Python", "JavaScript", "HTML", "CSS", "Bootstrap", "Flask", "React", "APIs", "Git", "Node.js", "Jest", "Next.js"]
     },
     {
       id: 2,
@@ -24,7 +24,7 @@ export const SobreNosotros = () => {
       name: "Oscar Villalobos",
       role: "Consultor ERP y Desarrollos BI",
       image: oscar,
-      skills: ["Consultor Certificado SAP B1 ", "Manejo SQL y HANA DB", "Crystal Report", "Power BI","Data Migration"]
+      skills: ["Consultor Certificado SAP B1 ", "Manejo SQL y HANA DB", "Crystal Report", "Power BI", "Data Migration"]
     },
   ];
 
@@ -40,7 +40,7 @@ export const SobreNosotros = () => {
         textAlign: "center",
         fontSize: "2rem",
         marginBottom: "30px",
-        color: "#36b0a1" 
+        color: "#36b0a1"
       }}>
         Sobre Nosotros
       </h2>
@@ -69,7 +69,7 @@ export const SobreNosotros = () => {
           textAlign: "center",
           fontSize: "1.8rem",
           marginBottom: "20px",
-          color: "#36b0a1" 
+          color: "#36b0a1"
         }}
       >
         Nuestro Equipo

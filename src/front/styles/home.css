@@ -200,15 +200,15 @@ section {
   left: 0;
   width: 100%;
   z-index: 0;
-  padding-top: 100px; /* Ajusta según la altura de tu navbar */
+  padding-top: 0; /* Elimina el padding superior */
 }
 
 .hero-content {
-  background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro semitransparente */
+  background-color: rgba(0, 0, 0, 0.6);
   padding: 40px;
   border-radius: 10px;
   color: white;
-  margin-top: 20px; /* Espacio adicional si es necesario */
+  margin-top: 0; /* Elimina este margen */
 }
 
 .hero-title {
@@ -701,4 +701,10 @@ h3,
     bottom: 15px;
     right: 15px;
   }
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
 }

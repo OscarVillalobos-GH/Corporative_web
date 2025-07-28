@@ -333,7 +333,7 @@ export const Ecommerce = () => {
           zIndex: 0,
         }}
       >
-        <div className="hero-content">
+        <div className="hero-content mb-5" style={{ paddingTop: "25vh" }}>
           <h1 className="hero-title">
             Desarrollo de Ecommerce Personalizado
             <br /> Soluciones a tu Medida
@@ -429,7 +429,7 @@ export const Ecommerce = () => {
             <div className="col-md-4 mb-4">
               <div className="card h-100 bg-light p-3">
                 <i className="fas fa-desktop fa-3x mb-3" style={{ color: '#36b0a1' }}></i>
-                <h3 style={{ color: '#001c30' }}>Frontend Personalizado</h3>
+                <h3 style={{ color: '#36b0a1' }}>Frontend Personalizado</h3>
                 <p style={{ color: '#555' }}>
                   Interfaces únicas y optimizadas para una experiencia de usuario excepcional.
                 </p>
@@ -438,7 +438,7 @@ export const Ecommerce = () => {
             <div className="col-md-4 mb-4">
               <div className="card h-100 bg-light p-3">
                 <i className="fas fa-paint-brush fa-3x mb-3" style={{ color: '#36b0a1' }}></i>
-                <h3 style={{ color: '#001c30' }}>Diseño de Marca</h3>
+                <h3 style={{ color: '#36b0a1' }}>Diseño de Marca</h3>
                 <p style={{ color: '#555' }}>
                   Diseño que refleja y refuerza la identidad de tu marca, asegurando coherencia.
                 </p>
@@ -447,7 +447,7 @@ export const Ecommerce = () => {
             <div className="col-md-4 mb-4">
               <div className="card h-100 bg-light p-3">
                 <i className="fas fa-sitemap fa-3x mb-3" style={{ color: '#36b0a1' }}></i>
-                <h3 style={{ color: '#001c30' }}>Interfaces Intuitivas</h3>
+                <h3 style={{ color: '#36b0a1' }}>Interfaces Intuitivas</h3>
                 <p style={{ color: '#555' }}>
                   Interfaces de usuario claras y fáciles de usar, enfocadas en eficiencia.
                 </p>
@@ -456,7 +456,7 @@ export const Ecommerce = () => {
             <div className="col-md-4 mb-4">
               <div className="card h-100 bg-light p-3">
                 <i className="fas fa-arrows-alt fa-3x mb-3" style={{ color: '#36b0a1' }}></i>
-                <h3 style={{ color: '#001c30' }}>Navegación Fluida</h3>
+                <h3 style={{ color: '#36b0a1' }}>Navegación Fluida</h3>
                 <p style={{ color: '#555' }}>
                   Navegación ágil y sin interrupciones para una experiencia óptima.
                 </p>
@@ -465,7 +465,7 @@ export const Ecommerce = () => {
             <div className="col-md-4 mb-4">
               <div className="card h-100 bg-light p-3">
                 <i className="fas fa-server fa-3x mb-3" style={{ color: '#36b0a1' }}></i>
-                <h3 style={{ color: '#001c30' }}>Backend Robusto</h3>
+                <h3 style={{ color: '#36b0a1' }}>Backend Robusto</h3>
                 <p style={{ color: '#555' }}>
                   Arquitectura sólida y escalable para rendimiento y seguridad.
                 </p>
@@ -474,7 +474,7 @@ export const Ecommerce = () => {
             <div className="col-md-4 mb-4">
               <div className="card h-100 bg-light p-3">
                 <i className="fas fa-boxes fa-3x mb-3" style={{ color: '#36b0a1' }}></i>
-                <h3 style={{ color: '#001c30' }}>Gestión de Inventario</h3>
+                <h3 style={{ color: '#36b0a1' }}>Gestión de Inventario</h3>
                 <p style={{ color: '#555' }}>
                   Control eficiente y en tiempo real de tu stock para optimizar operaciones.
                 </p>
@@ -483,7 +483,7 @@ export const Ecommerce = () => {
             <div className="col-md-4 mb-4">
               <div className="card h-100 bg-light p-3">
                 <i className="fas fa-credit-card fa-3x mb-3" style={{ color: '#36b0a1' }}></i>
-                <h3 style={{ color: '#001c30' }}>Pasarelas de Pago</h3>
+                <h3 style={{ color: '#36b0a1' }}>Pasarelas de Pago</h3>
                 <p style={{ color: '#555' }}>
                   Integración fluida con pasarelas de pago, garantizando transacciones seguras.
                 </p>
@@ -492,7 +492,7 @@ export const Ecommerce = () => {
             <div className="col-md-4 mb-4">
               <div className="card h-100 bg-light p-3">
                 <i className="fas fa-shield-alt fa-3x mb-3" style={{ color: '#36b0a1' }}></i>
-                <h3 style={{ color: '#001c30' }}>Sistemas Seguros</h3>
+                <h3 style={{ color: '#36b0a1' }}>Sistemas Seguros</h3>
                 <p style={{ color: '#555' }}>
                   Sistemas de pago seguros que protegen transacciones y confianza.
                 </p>
@@ -501,7 +501,7 @@ export const Ecommerce = () => {
             <div className="col-md-4 mb-4">
               <div className="card h-100 bg-light p-3">
                 <i className="fas fa-truck fa-3x mb-3" style={{ color: '#36b0a1' }}></i>
-                <h3 style={{ color: '#001c30' }}>Gestión de Pedidos</h3>
+                <h3 style={{ color: '#36b0a1' }}>Gestión de Pedidos</h3>
                 <p style={{ color: '#555' }}>
                   Módulos que optimizan la gestión y entrega de pedidos de forma eficiente.
                 </p>

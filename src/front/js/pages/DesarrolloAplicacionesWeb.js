@@ -4,12 +4,10 @@ import "../../styles/home.css";
 import desarrolloWEB from "../../img/desarrolloWEB.png";
 import appWeb from "../../img/appWeb.png";
 import webGIF from "../../img/webGIF.gif";
-import lenguajesWEB from "../../img/lenguajesWEB.jpg";
 import frameworks from "../../img/frameworks.jpg";
 import frameworksBack from "../../img/frameworksBack.webp";
 import baseDatos from "../../img/baseDatos.webp";
 import tecnologiasNUBE from "../../img/tecnologiasNUBE.webp";
-import conclusionWEB from "../../img/conclusionWEB.jpg";
 
 export const DesarrolloAplicacionesWeb = () => {
   const form = useRef();
@@ -326,21 +324,23 @@ export const DesarrolloAplicacionesWeb = () => {
         className="hero-container"
         style={{
           position: "absolute",
-          top: 0,
+          top: 0, // Ensure it starts at the very top
           left: 0,
           width: "100%",
-          height: "100vh", // Ajusta esta altura según necesites
+          height: "100vh", // Full viewport height
           zIndex: 0,
           backgroundImage: `url(${desarrolloWEB})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          paddingTop: "110px", // Espacio para el navbar
+          marginTop: 0, // Remove any top margin
+          paddingTop: 0, // Remove any top padding
         }}
       ></div>
 
       {/* Contenido principal con fondo semitransparente */}
       <div style={{ position: "relative", zIndex: 1 }}>
-        <section className="hero-content mb-5">
+        <section className="hero-content mb-5" style={{ paddingTop: "18vh" }}>
+
           <div className="row align-items-center">
             <div className="col-md-6">
               <h1 className="hero-title">Desarrollo de Aplicaciones Web</h1>
@@ -380,7 +380,8 @@ export const DesarrolloAplicacionesWeb = () => {
           </div>
         </section>
 
-        <section className="ecommerce-section" style={{ marginTop: "20px" }}>
+        <section className="ecommerce-section" style={{ paddingTop: "45vh" }}>
+
           <div className="row align-items-center">
             <div className="col-md-6">
               <div className="card p-4" style={{ backgroundColor: "rgba(255, 255, 255, 0.9)" }}>
@@ -419,18 +420,12 @@ export const DesarrolloAplicacionesWeb = () => {
 
         <section className="mb-5 ecommerce-section">
           <div className="row align-items-center">
-            <div className="col-md-7">
+            <div className="col-md-12">
               <h2 style={{ color: "#36b0a1" }} className="text-center mb-4">
                 Tipos de Aplicaciones Web Más Utilizadas:
               </h2>
             </div>
-            <div className="col-md-4">
-              <img
-                src={lenguajesWEB}
-                alt="Proceso de Desarrollo"
-                className="img-fluid rounded"
-              />
-            </div>
+
             <div className="row text-center my-5">
               <div className="col-md-4 mb-4">
                 <div className="card p-3 border h-100">
@@ -685,23 +680,22 @@ export const DesarrolloAplicacionesWeb = () => {
           <div
             className="card p-4 border"
             style={{
-              backgroundImage: `url(${conclusionWEB})`,
               backgroundSize: "cover",
               color: "white",
               width: "100%",
               height: "70vh"
             }}
           >
-            <h2 style={{ color: "#36b0a1" }} className="mb-4">
+            <h2 style={{ color: "#36b0a1" }} className="text-center mb-4">
               Conclusión
             </h2>
-            <p style={{ color: "#FFFFF0" }}>
+            <p>
               El desarrollo de aplicaciones web se ha convertido en un pilar fundamental para la transformación digital de las empresas. En un entorno donde la rapidez, la eficiencia y la experiencia del usuario son determinantes, contar con soluciones web personalizadas permite automatizar procesos, integrar sistemas y brindar un acceso ágil y seguro desde cualquier dispositivo. Más allá de ser una simple herramienta tecnológica, una aplicación web bien diseñada representa una ventaja estratégica: impulsa la productividad, mejora la relación con los clientes y abre nuevas oportunidades de crecimiento. En nuestro equipo, combinamos innovación, experiencia y tecnologías modernas para desarrollar plataformas que no solo resuelven necesidades actuales, sino que también preparan a tu empresa para los desafíos del futuro.
             </p>
           </div>
         </section>
 
-        <section className="mb-5 ecommerce-section" id="contact-form">
+        <section className="mb-0 ecommerce-section" id="contact-form">
           <h2 style={{ color: "#ffff" }} className="text-center mb-4">
             Contáctanos
           </h2>

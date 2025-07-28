@@ -3,14 +3,12 @@ import emailjs from "@emailjs/browser";
 import "../../styles/home.css";
 import APIs from "../../img/APIs.png";
 import apiGif from "../../img/apiGif.gif";
-import apiProcesos from "../../img/apiProcesos.png";
 import AiChatGif from "../../img/AiChatGif.gif";
 import ProtocolosGif from "../../img/ProtocolosGif.gif";
 import lenguajesGif from "../../img/lenguajesGif.gif";
 import BDGif from "../../img/BD-Gif.gif";
 import seguridadGif from "../../img/seguridadGif.gif";
 import cloud from "../../img/cloud.gif";
-import conclusionAPI from "../../img/conclusionAPI.jpg";
 
 export const ApisIntegraciones = () => {
   const form = useRef();
@@ -334,48 +332,24 @@ export const ApisIntegraciones = () => {
           zIndex: 0,
           backgroundImage: `url(${APIs})`,
           backgroundSize: "cover",
+          backgroundPosition: "center",
+          marginTop: 0,
+          paddingTop: 0,
         }}
       ></div>
 
-      {/* Contenido principal */}
-      <div style={{ position: "relative", zIndex: 1, paddingTop: "20px" }}>
-        <section className="mb-5 ecommerce-section">
+      <div style={{ position: "relative", zIndex: 1 }}>
+        <section className="hero-content mb-5" style={{ paddingTop: "25vh" }}>
           <div className="row align-items-center">
-            {/* Títulos alineados a la izquierda */}
-            <div className="col-md-7">
-              <h1 style={{ color: "#ffff", fontWeight: "bold" }}>
-                Desarrollo de APIs e Integraciones:
-              </h1>
-              <h2 style={{ color: "#ffff", fontSize: "2.5rem", lineHeight: "1.2" }}>
-                Optimiza y Automatiza los <br />
-                Procesos de tu Empresa
-              </h2>
+            <div className="col-md-6">
+              <h1 className="hero-title">Desarrollo de APIs e Integraciones</h1>
             </div>
-
-            {/* Párrafos alineados a la derecha dentro de una tarjeta */}
-            <div className="col-md-4">
-              <div className="card p-4 border">
-                <p>
-                  En la era digital, las empresas necesitan conectar sus sistemas,
-                  automatizar procesos y mejorar la eficiencia operativa. El
-                  desarrollo de APIs e integraciones permite que diferentes
-                  plataformas, aplicaciones y bases de datos trabajen juntas de
-                  manera fluida, optimizando la productividad y mejorando la
-                  experiencia del cliente.
-                </p>
-                <p>
-                  Si tu empresa maneja múltiples herramientas digitales, software de
-                  terceros o necesita una infraestructura tecnológica más eficiente,
-                  contar con APIs bien diseñadas es clave para el éxito. A
-                  continuación, exploraremos en detalle qué es el desarrollo de
-                  APIs, sus beneficios, aplicaciones empresariales y las tecnologías
-                  más utilizadas.
-                </p>
-              </div>
+            <div className="col-md-6">
+              <p className="hero-subtitle">
+                Conectamos sistemas, automatizamos procesos y mejoramos la eficiencia operativa de tu empresa a través de APIs seguras y escalables.
+              </p>
             </div>
           </div>
-
-          {/* Botones centrados al final */}
           <div className="text-center mt-4">
             <a
               href="https://wa.me/56995334317?text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios"
@@ -401,7 +375,7 @@ export const ApisIntegraciones = () => {
           </div>
         </section>
 
-        <section className="mb-5 ecommerce-section">
+        <section className="mb-5 ecommerce-section" style={{ paddingTop: "45vh" }}>
           <div className="row align-items-center">
             <div className="col-md-6">
               <div className="card p-4 border">
@@ -431,6 +405,7 @@ export const ApisIntegraciones = () => {
                   src={apiGif}
                   alt="API e Integraciones"
                   className="img-fluid rounded"
+                  style={{ maxWidth: "60%", margin: "0 auto", display: "block" }}
                 />
               </div>
             </div>
@@ -439,18 +414,11 @@ export const ApisIntegraciones = () => {
 
         <section className="mb-5 ecommerce-section">
           <div className="row align-items-center">
-            <div className="col-md-7">
+            <div className="col-md-12">
               <h3 style={{ color: "#36b0a1" }} className="text-center mb-4">
                 El proceso de desarrollo de APIs e integraciones incluye varias
                 etapas:
               </h3>
-            </div>
-            <div className="col-md-4">
-              <img
-                src={apiProcesos}
-                alt="Proceso de Desarrollo"
-                className="img-fluid rounded"
-              />
             </div>
             <div className="row text-center my-4">
               <div className="col-md-4 mb-4">
@@ -627,12 +595,11 @@ export const ApisIntegraciones = () => {
                 className="img-fluid rounded"
               />
             </div>
-            <div className="col-md-6">
-              <p>
-                Las APIs y las integraciones pueden aplicarse en múltiples
-                sectores y mejorar diversos procesos empresariales. Algunas de
-                sus principales aplicaciones incluyen:
+            <div className="col-md-5">
+              <p className="fs-4">
+                Las APIs y las integraciones pueden aplicarse en múltiples sectores y mejorar diversos procesos empresariales. Algunas de sus principales aplicaciones incluyen:
               </p>
+
             </div>
           </div>
         </section>
@@ -870,16 +837,12 @@ export const ApisIntegraciones = () => {
         <section className="mb-5 ecommerce-section">
           <div
             className="card p-4 border"
-            style={{
-              backgroundImage: `url(${conclusionAPI})`,
-              backgroundSize: "cover",
-              color: "white",
-            }}
+
           >
-            <h2 style={{ color: "#36b0a1" }} className="mb-4">
+            <h2 style={{ color: "#36b0a1" }} className="text-center mb-4">
               ¿Por Qué Contratar un Servicio de Desarrollo de APIs?
             </h2>
-            <p style={{ color: "#FFFFF0" }}>
+            <p>
               El desarrollo de APIs e integraciones es una inversión estratégica
               que mejora la eficiencia operativa y la competitividad de una
               empresa. Contratar un servicio especializado ofrece:
@@ -904,10 +867,10 @@ export const ApisIntegraciones = () => {
                 <strong>5.</strong> Mantenimiento y optimización continua.
               </li>
             </ul>
-            <h2 style={{ color: "#36b0a1" }} className="mb-4 mt-4">
+            <h2 style={{ color: "#36b0a1" }} className="text-center mb-4">
               Conclusión
             </h2>
-            <p style={{ color: "#FFFFF0" }}>
+            <p>
               El desarrollo de APIs e integraciones es fundamental para cualquier
               empresa que busque optimizar procesos, mejorar la experiencia del
               cliente y aumentar la eficiencia operativa. Al conectar sistemas,
@@ -915,19 +878,19 @@ export const ApisIntegraciones = () => {
               APIs permiten a las empresas crecer y adaptarse a las nuevas
               exigencias del mercado.
             </p>
-            <p style={{ color: "#FFFFF0" }}>
+            <p>
               Si deseas transformar tu empresa con soluciones tecnológicas
               avanzadas, un equipo experto en desarrollo de APIs puede ayudarte
               a diseñar e implementar integraciones eficientes y seguras.
             </p>
-            <p className="text-center" style={{ color: "#FFFFF0" }}>
+            <p>
               ¡Contáctanos hoy y descubre cómo las APIs pueden impulsar tu
               negocio al siguiente nivel!
             </p>
           </div>
         </section>
 
-        <section className="mb-5 ecommerce-section" id="contact-form">
+        <section className="mb-0 ecommerce-section" id="contact-form">
           <h2 style={{ color: "#ffff" }} className="text-center mb-4">
             Contáctanos
           </h2>
