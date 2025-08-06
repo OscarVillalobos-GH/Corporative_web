@@ -70,8 +70,8 @@ export const Sapb1 = () => {
       SAP Business One: el ERP para PYMES
     </h2>
 
-      <div style={{ maxWidth: "800px", margin: "0 auto", marginBottom: "30px", lineHeight: "1.6", fontSize: "16px" }}>
-        <p>
+      <div style={{ maxWidth: "800px", margin: "0 auto", marginBottom: "30px", lineHeight: "1.6", fontSize: "16px", textAlign: "justify" }}>
+         <p>
           ¿Qué es SAP Business One? Es un ERP diseñado para que la PYME y las empresas en crecimiento de hoy operen
           como un GRANDE. Una <strong>solución completa</strong> para administrar toda tu empresa con transparencia e
           integrando finanzas, ventas, inventarios, operaciones y más.

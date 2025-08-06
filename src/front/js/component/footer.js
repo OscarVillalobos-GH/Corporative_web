@@ -19,7 +19,7 @@ export const Footer = () => (
 			</div>
 		</div>
 		<hr />
-		<p className="footer-text">© 2025 Tu Empresa. Todos los derechos reservados.</p>
+		<p className="footer-text">© 2025 Compas it spa. Todos los derechos reservados.</p>
 	</footer>
 );
 
