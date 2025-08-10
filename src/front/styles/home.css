@@ -195,12 +195,13 @@ section {
   height: 100vh;
   background-size: cover;
   background-position: center;
-  position: absolute;
-  top: 0;
-  left: 0;
+  display: flex; /* Activa Flexbox */
+  align-items: center; /* Centra verticalmente */
+  justify-content: center; /* Centra horizontalmente */
+  position: relative; /* Evita superposición absoluta */
   width: 100%;
   z-index: 0;
-  padding-top: 0; /* Elimina el padding superior */
+  padding: 0; /* Sin padding */
 }
 
 .hero-content {
@@ -208,7 +209,8 @@ section {
   padding: 40px;
   border-radius: 10px;
   color: white;
-  margin-top: 0; /* Elimina este margen */
+  text-align: center; /* Centra el texto */
+  max-width: 800px;
 }
 
 .hero-title {
