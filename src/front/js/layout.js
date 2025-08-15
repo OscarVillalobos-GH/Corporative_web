@@ -17,6 +17,7 @@ import { Analytics } from "./pages/analytics";
 import { SobreNosotros } from "./pages/SobreNosotros";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
+import { Projects } from "./pages/projects";
 
 const Layout = () => {
   const basename = process.env.BASENAME || "";
@@ -44,6 +45,7 @@ const Layout = () => {
             <Route element={<Analytics />} path="/bi" />
             <Route element={<Erpservicios />} path="/erpservicios-page" />
             <Route element={<SobreNosotros />} path="/aboutus" />
+            <Route element={<Projects />} path="/proyectos" />
             
             <Route element={<h1>Not found!</h1>} />
           </Routes>

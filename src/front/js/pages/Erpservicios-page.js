@@ -31,16 +31,25 @@ export const Erpservicios = () => {
   ];
 
   return (
-    <section className="erp-page" style={{ padding: "40px", backgroundColor: "#f9f9f9" }}>
-
-      <h2 style={{ 
-      textAlign: "center", 
-      fontSize: "2rem", 
-      marginBottom: "30px", 
-      color: "#36b0a1" 
-    }}>
-      Nuestros Servicios ERP
-    </h2>
+    <section
+      className="erp-page"
+      style={{
+        padding: "40px 20px",
+        backgroundColor: "#f9f9f9",
+        fontFamily: "system-ui, -apple-system, BlinkMacSystemFont, sans-serif",
+      }}
+    >
+      <h2
+        style={{
+          textAlign: "center",
+          fontSize: "2rem",
+          marginBottom: "30px",
+          color: "#36b0a1",
+          lineHeight: 1.2,
+        }}
+      >
+        Nuestros Servicios ERP
+      </h2>
 
       <div
         className="services-container"
@@ -49,6 +58,8 @@ export const Erpservicios = () => {
           flexWrap: "wrap",
           justifyContent: "center",
           gap: "30px",
+          maxWidth: "1200px",
+          margin: "0 auto",
         }}
       >
         {services.map((service) => (
@@ -58,22 +69,44 @@ export const Erpservicios = () => {
             style={{
               backgroundColor: "#fff",
               borderRadius: "10px",
-              boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
-              width: "300px",
+              boxShadow: "0 4px 16px rgba(0, 0, 0, 0.08)",
+              width: "100%",
+              maxWidth: "340px",
               padding: "20px",
-              textAlign: "center",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
             }}
           >
-            <img
-              src={service.image}
-              alt={service.title}
-              style={{ width: "100%", height: "180px", objectFit: "cover", borderRadius: "6px" }}
-            />
-            <h4 style={{ marginTop: "15px" }}>{service.title}</h4>
-            <p style={{ fontSize: "15px", marginTop: "10px" }}>{service.description}</p>
+            <div>
+              <img
+                src={service.image}
+                alt={service.title}
+                style={{
+                  width: "100%",
+                  height: "180px",
+                  objectFit: "cover",
+                  borderRadius: "6px",
+                }}
+              />
+              <h4 style={{ marginTop: "15px", marginBottom: "10px" }}>
+                {service.title}
+              </h4>
+              <p
+                style={{
+                  fontSize: "15px",
+                  marginTop: 0,
+                  lineHeight: 1.5,
+                  textAlign: "justify",
+                }}
+              >
+                {service.description}
+              </p>
+            </div>
           </div>
         ))}
       </div>
+
       {/* Ícono flotante de WhatsApp */}
       <a
         href="https://wa.me/56995334317?text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios"
@@ -87,9 +120,11 @@ export const Erpservicios = () => {
           fontSize: "40px",
           color: "#25D366",
           textDecoration: "none",
+          zIndex: 1000,
         }}
+        aria-label="WhatsApp"
       >
-        <i className="fab fa-whatsapp"></i>
+        <i className="fab fa-whatsapp" aria-hidden="true"></i>
       </a>
     </section>
   );
