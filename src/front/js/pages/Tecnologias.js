@@ -1,42 +1,59 @@
 import React from "react";
 import "../../styles/home.css";
+import nubeGIF from "../../img/nube.gif";
+import NetCore from "../../img/NetCore.png"; // Asegúrate de que el archivo nube.gif esté en la carpeta img
+import SCRUM from "../../img/SCRUM.jpg"; // Asegúrate de que el archivo SCRUM.jpg esté en la carpeta img
 
 export const Tecnologias = () => {
   return (
-    <div className="container mt-5">
-      <div className="row mb-5">
-        <div className="col-md-6">
-          <section className="mb-5">
-            <h2 className="text-primary">Tecnologías Cloud</h2>
-            <p>
-              Nos especializamos en soluciones basadas en la nube para maximizar
-              la escalabilidad y la seguridad de tus proyectos. Ofrecemos
-              servicios que aprovechan las últimas tecnologías para alojar,
-              gestionar y optimizar tus aplicaciones.
-            </p>
-            <ul>
-              <li>AWS, Azure y Google Cloud como plataformas principales.</li>
-              <li>Infraestructura como código (IaC).</li>
-              <li>Almacenamiento escalable y backups automáticos.</li>
-            </ul>
-            <p>
-              Nuestro equipo está capacitado para implementar soluciones que se
-              adapten a tus necesidades, desde despliegues simples hasta
-              arquitecturas complejas en entornos híbridos.
-            </p>
-          </section>
+    <div className="position-relative">
+      {/* Sección inicial con GIF y texto, sin imagen de fondo */}
+      <section className="ecommerce-section" style={{ marginTop: "100px" }}>
+        <div className="row align-items-center">
+          <div className="col-md-6">
+            <div className="card p-4" style={{ backgroundColor: "rgba(255, 255, 255, 0.9)" }}>
+              <h2 style={{ color: "#36b0a1" }} className="text-center mb-4">
+                Tecnologías Cloud
+              </h2>
+              <p>
+                Nos especializamos en soluciones basadas en la nube para maximizar
+                la escalabilidad y la seguridad de tus proyectos. Ofrecemos
+                servicios que aprovechan las últimas tecnologías para alojar,
+                gestionar y optimizar tus aplicaciones.
+              </p>
+              <ul>
+                <li>AWS, Azure y Google Cloud como plataformas principales.</li>
+                <li>Infraestructura como código (IaC).</li>
+                <li>Almacenamiento escalable y backups automáticos.</li>
+              </ul>
+              <p>
+                Nuestro equipo está capacitado para implementar soluciones que se
+                adapten a tus necesidades, desde despliegues simples hasta
+                arquitecturas complejas en entornos híbridos.
+              </p>
+            </div>
+          </div>
+          <div className="col-md-6">
+            <div className="card p-4" style={{ backgroundColor: "rgba(255, 255, 255, 0.9)" }}>
+              <img
+                src={nubeGIF}
+                alt="Tecnologías Cloud"
+                className="img-fluid rounded"
+              />
+            </div>
+          </div>
         </div>
-        <div className="col-md-6">
-          <div className="cloud-image animate-cloud"></div>
-        </div>
-      </div>
+      </section>
 
-      <section className="mb-5">
-        <h2 className="text-primary">Tecnologías que utilizamos</h2>
+      {/* Sección de Tecnologías que utilizamos */}
+      <section className="mb-5 ecommerce-section">
+        <h2 style={{ color: "#36b0a1" }} className="text-center mb-4">
+          Tecnologías que utilizamos
+        </h2>
         <div className="tech-sections">
           {/* Back-end */}
           <div className="tech-section">
-            <h3>Back-end</h3>
+            <h3 style={{ color: "#36b0a1" }}>Back-end</h3>
             <div className="tech-icons">
               <a
                 href="https://nodejs.org/"
@@ -53,10 +70,9 @@ export const Tecnologias = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <i
-                  className="fab fa-dotnet"
-                  style={{ fontSize: "2rem", color: "#512BD4" }}
-                ></i>
+                <img
+                  src={NetCore} style={{ width: "2rem", height: "Wrem", color: "#512BD4" }}
+                />
               </a>
               <a
                 href="https://www.python.org/"
@@ -71,14 +87,13 @@ export const Tecnologias = () => {
             </div>
             <p>
               Desarrollamos la lógica del servidor con tecnologías robustas como
-              Node.js, .NET Core y Python, asegurando rendimiento y
-              escalabilidad.
+              Node.js, .NET Core y Python, asegurando rendimiento y escalabilidad.
             </p>
           </div>
 
           {/* Front-end */}
           <div className="tech-section">
-            <h3>Front-end</h3>
+            <h3 style={{ color: "#36b0a1" }}>Front-end</h3>
             <div className="tech-icons">
               <a
                 href="https://reactjs.org/"
@@ -109,7 +124,7 @@ export const Tecnologias = () => {
 
           {/* Base de Datos */}
           <div className="tech-section">
-            <h3>Base de Datos</h3>
+            <h3 style={{ color: "#36b0a1" }}>Base de Datos</h3>
             <div className="tech-icons">
               <a
                 href="https://www.postgresql.org/"
@@ -150,7 +165,7 @@ export const Tecnologias = () => {
 
           {/* Tecnologías de Virtualización */}
           <div className="tech-section">
-            <h3>Tecnologías de Virtualización</h3>
+            <h3 style={{ color: "#36b0a1" }}>Tecnologías de Virtualización</h3>
             <div className="tech-icons">
               <a
                 href="https://www.vmware.com/"
@@ -180,20 +195,30 @@ export const Tecnologias = () => {
           </div>
         </div>
       </section>
-      <section className="mb-5 text-center">
-        <h1 className="text-primary mb-4">Metodología Agile (SCRUM)</h1>
-        <p className="lead">
-          Scrum es un proceso en el que se aplican de manera regular un conjunto
-          de buenas prácticas para trabajar colaborativamente, en equipo, y
-          obtener el mejor resultado posible de un proyecto:
-        </p>
-        <div className="mt-4">
-          <img
-            src="https://www.cajmetro.cl/wp-content/uploads/2021/03/agile1.jpg"
-            alt="Ecommerce Personalizado"
-            className="img-fluid rounded"
-            style={{ maxWidth: "90%", maxHeight: "600px", margin: "0 auto" }}
-          />
+
+      {/* Sección de Metodología Agile (SCRUM) con imagen */}
+      <section className="mb-5 ecommerce-section">
+        <div className="row align-items-center">
+          <div className="col-md-12">
+            <div className="card p-4" style={{ backgroundColor: "rgba(255, 255, 255, 0.9)" }}>
+              <h2 style={{ color: "#36b0a1" }} className="text-center mb-4">
+                Metodología Agile (SCRUM)
+              </h2>
+              <p>
+                Scrum es un proceso en el que se aplican de manera regular un conjunto
+                de buenas prácticas para trabajar colaborativamente, en equipo, y
+                obtener el mejor resultado posible de un proyecto:
+              </p>
+              <div className="mt-4 text-center">
+                <img
+                  src={SCRUM}
+                  alt="Metodología Agile (SCRUM)"
+                  className="img-fluid rounded"
+                  style={{ maxWidth: "90%", maxHeight: "600px", margin: "0 auto" }}
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

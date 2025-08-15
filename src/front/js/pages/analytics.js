@@ -29,6 +29,7 @@ export const Analytics = () => {
       title: "Business Analytics",
       description: (
         <>
+        
           Trabajamos con distintos productos para lograr entregar de la manera más sencilla y ágil posible los datos de su negocio:
           <ul style={{ textAlign: "left", paddingLeft: "20px", marginTop: "10px" }}>
             <li>Crystal Reports</li>
@@ -50,21 +51,20 @@ export const Analytics = () => {
   ];
 
   const extraModules = [
-    {
-      id: 6,
-      title: "Demo - Power BI",
-      description:
-        "¿No conoces Power BI? Aquí puedes ver un ejemplo de lo que podemos hacer.",
-      image: SAP_four,
-      link: "https://bit.ly/datawolke_demo_powerbi",
-    },
+    
   ];
 
   return (
     <section className="erp-page" style={{ padding: "40px", backgroundColor: "#f9f9f9" }}>
-      <h2 style={{ textAlign: "center", fontSize: "2rem", marginBottom: "30px" }}>
-        Soluciones para Business Analytics
-      </h2>
+      
+    <h2 style={{ 
+          textAlign: "center", 
+          fontSize: "2rem", 
+          marginBottom: "30px", 
+          color: "#36b0a1" 
+        }}>
+          Soluciones para Business Analytics
+        </h2>
 
       <div
         style={{
@@ -75,7 +75,7 @@ export const Analytics = () => {
           fontSize: "16px",
         }}
       >
-        <p>
+         <p style={{ textAlign: "justify" }}>
           Las soluciones de Business Analytics ayudan a empresas de todos los tamaños a hacer más con sus datos, 
           transformándolos en información procesable y visualizaciones fácilmente entendibles que le permitirán tomar mejores
           decisiones basadas en hechos, descubrir tendencias ocultas y mejorar rápidamente el rendimiento de su negocio.

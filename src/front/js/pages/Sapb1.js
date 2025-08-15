@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import "../../styles/home.css";
 
 import SAP_one from "../../img/07_finanzas.png";
@@ -61,12 +61,17 @@ export const Sapb1 = () => {
 
   return (
     <section style={{ padding: "40px", backgroundColor: "#f4f4f4", fontFamily: "Arial, sans-serif" }}>
-      <h2 style={{ textAlign: "center", fontSize: "2rem", marginBottom: "30px" }}>
-        SAP Business One: el ERP para PYMES
-      </h2>
+    <h2 style={{ 
+      textAlign: "center", 
+      fontSize: "2rem", 
+      marginBottom: "30px", 
+      color: "#36b0a1" 
+    }}>
+      SAP Business One: el ERP para PYMES
+    </h2>
 
-      <div style={{ maxWidth: "800px", margin: "0 auto", marginBottom: "30px", lineHeight: "1.6", fontSize: "16px" }}>
-        <p>
+      <div style={{ maxWidth: "800px", margin: "0 auto", marginBottom: "30px", lineHeight: "1.6", fontSize: "16px", textAlign: "justify" }}>
+         <p>
           ¿Qué es SAP Business One? Es un ERP diseñado para que la PYME y las empresas en crecimiento de hoy operen
           como un GRANDE. Una <strong>solución completa</strong> para administrar toda tu empresa con transparencia e
           integrando finanzas, ventas, inventarios, operaciones y más.
