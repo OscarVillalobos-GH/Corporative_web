@@ -10,7 +10,7 @@ import { DesarrolloAplicacionesWeb } from "./pages/DesarrolloAplicacionesWeb";
 import { Ecommerce } from "./pages/Ecommerce";
 import { ApisIntegraciones } from "./pages/ApisIntegraciones";
 import { Tecnologias } from "./pages/Tecnologias";
-import { Sapb1 } from "./pages/sapb1";
+import { Sapb1 } from "./pages/Sapb1";
 import { Erpservicios } from "./pages/Erpservicios-page";
 import injectContext from "./store/appContext";
 import { Analytics } from "./pages/analytics";

@@ -15,9 +15,9 @@ export const SobreNosotros = () => {
     {
       id: 2,
       name: "Saray Rodríguez",
-      role: "Desarrolladora",
+      role: "Desarrolladora Full Stack - Diseñadora UX/UI",
       image: saray,
-      skills: ["SQL Server", "PostgreSQL", "HANA DB", "MySQL"]
+      skills: ["SQL Server", "PostgreSQL", "Python", "MySQL", "JavaScript", "CSS", "React", "Flask", "Figma", "Adobe XD", "Photoshop / Illustrator"]
     },
     {
       id: 3,
