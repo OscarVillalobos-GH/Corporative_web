@@ -78,8 +78,8 @@ export const Projects = () => {
             }}
           >
             {module.id === 7 ? (
-             <video width="100%" height="auto" controls style={{ borderRadius: "6px" }}>
-                <source src="/videos/Video_Agenda.mp4" type="video/mp4"/>
+              <video width="100%" height="auto" controls style={{ borderRadius: "6px" }}>
+                <source src="/videos/Video_Agenda.mp4" type="video/mp4" />
                 Tu navegador no soporta video HTML5.
               </video>
             ) : (
