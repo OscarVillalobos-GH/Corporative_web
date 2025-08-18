@@ -1,5 +1,4 @@
 import React, { useRef, useState } from "react";
-import emailjs from "@emailjs/browser";
 import "../../styles/home.css";
 import APIs from "../../img/APIs.png";
 import apiGif from "../../img/apiGif.gif";
@@ -19,6 +18,7 @@ export const ApisIntegraciones = () => {
   return (
     <div className="position-relative">
       {/* Fondo del título principal */}
+      
       <div
         className="hero-container"
         style={{
@@ -41,17 +41,17 @@ export const ApisIntegraciones = () => {
         <section 
           className="hero-content mb-5" 
           style={{ 
-            paddingTop: "25vh",
+            paddingTop: "18vh",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
             textAlign: "center",
             maxWidth: "1200px",
             margin: "0 auto",
-            padding: "25vh 20px 0"
+            padding: "18vh 20px 0"
           }}
         >
-          <div className="row justify-content-center" style={{ width: "100%" }}>
+          <div className="row justify-content-center" style={{ width: "100%" ,textAlign: "justify" }}>
             <div className="col-lg-8">
               <h1 className="hero-title">Desarrollo de APIs e Integraciones</h1>
               <p className="hero-subtitle mt-3">
@@ -63,15 +63,18 @@ export const ApisIntegraciones = () => {
         </section>
 
         {/* Sección ¿Qué es el Desarrollo de APIs? - Ahora centrada */}
-  <section className="mb-5 ecommerce-section" style={{ paddingTop: "45vh" }}>
-          <div className="row align-items-center">
-            <div className="col-md-6">
-              <div className="card p-4 border">
-                <h2 style={{ color: "#36b0a1" }} className="text-center mb-4">
-                  ¿Qué es el Desarrollo de APIs e Integraciones?
-                </h2>
-                <p>
-                  Las APIs (Application Programming Interfaces) son interfaces
+
+
+ <section className="ecommerce-section" style={{ paddingTop: "60vh" }}>
+          <div className="row align-items-stretch">
+            <div className="col-md-6 d-flex">
+              <div className="card p-4 d-flex" style={{ backgroundColor: "rgba(255, 255, 255, 0.9)" }}>
+                <div className="d-flex flex-column justify-content-center">
+                  <h2 style={{ color: "#36b0a1", textAlign: "justify" }} className="text-center mb-4">
+                    ¿Qué es el Desarrollo de APIs e Integraciones?
+                  </h2>
+                  <p>
+                   Las APIs (Application Programming Interfaces) son interfaces
                   que permiten que diferentes aplicaciones y sistemas se
                   comuniquen entre sí. Funcionan como «puentes digitales» que
                   permiten intercambiar datos y ejecutar funciones sin necesidad
@@ -82,16 +85,16 @@ export const ApisIntegraciones = () => {
                   CRM y una plataforma de e-commerce puede integrar estos
                   sistemas mediante APIs para que compartan información en
                   tiempo real.
-                </p>
+                  </p>
+                </div>
               </div>
             </div>
-            <div className="col-md-6">
-              <div className="card p-4 border">
+            <div className="col-md-6 d-flex">
+              <div className="card p-4 d-flex align-items-center" style={{ backgroundColor: "rgba(255, 255, 255, 0.9)" }}>
                 <img
                   src={apiGif}
                   alt="API e Integraciones"
                   className="img-fluid rounded"
-                  style={{ maxWidth: "60%", margin: "0 auto", display: "block" }}
                 />
               </div>
             </div>
@@ -285,36 +288,68 @@ export const ApisIntegraciones = () => {
             más utilizadas incluyen:
           </p>
 
-          <div className="row align-items-center mb-4">
-            <div className="col-md-3">
-              <div className="card p-4 border">
-                <img
-                  src={ProtocolosGif}
-                  alt="Protocolos de Comunicación"
-                  className="img-fluid rounded mb-3"
-                />
-              </div>
+   
+   
+     <div className="row align-items-stretch mb-4 g-3"> {/* Added g-3 for consistent gutter */}
+          <div className="col-md-5 d-flex">
+            <div className="card p-3 border w-100 d-flex align-items-center justify-content-center"> 
+              <img
+                src={ProtocolosGif}
+                alt="Lenguajes de Programación"
+                className="img-fluid rounded"
+                style={{
+                  maxHeight: "250px",
+                  width: "auto",
+                  objectFit: "contain"
+                }}
+              />
             </div>
-            <div className="col-md-9">
-              <div className="card p-4 border">
-                <h3 style={{ color: "#36b0a1" }}>Protocolos de Comunicación</h3>
-                <p>
-                  <strong>REST (Representational State Transfer):</strong> Es el estándar más
-                  utilizado en APIs, basado en HTTP.
+          </div>
+        <div className="col-md-7 d-flex">
+          <div className="card p-4 border w-100">
+            <h3 style={{ color: "#36b0a1", marginBottom: "1rem" }}>Protocolos de Comunicación</h3>
+            <div className="database-content">
+              <div className="d-flex mb-3"> {/* Flex container for icon + text */}
+                <div className="me-3" style={{ color: "#36b0a1" }}>
+                 <i className="fas fa-bolt fa-lg"></i> {/* Realtime icon */}
+                </div>
+                <p className="mb-0">
+                  <strong>REST (Representational State Transfer):</strong> Es el estándar más utilizado en APIs, basado en HTTP.
                 </p>
-                <p>
-                 <strong> GraphQL: </strong>Permite consultas más flexibles y optimizadas en
-                  comparación con REST.
+              </div>
+              <div className="d-flex mb-3">
+                <div className="me-3" style={{ color: "#36b0a1" }}>
+                  <i className="fas fa-bolt fa-lg"></i> {/* Realtime icon */}
+                </div>
+                <p className="mb-0">
+                  <strong>GraphQL:</strong>Permite consultas más flexibles y optimizadas en comparación con REST.
                 </p>
-                <p>
-                 <strong> SOAP (Simple Object Access Protocol): </strong>Utilizado en sistemas
-                  empresariales que requieren alta seguridad.
+              </div>
+              <div className="d-flex">
+                <div className="me-3" style={{ color: "#36b0a1" }}>
+                  <i className="fas fa-bolt fa-lg"></i> {/* Realtime icon */}
+                </div>
+                <p className="mb-0">
+                  <strong>SOAP (Simple Object Access Protocol): </strong> SOAP (Simple Object Access Protocol): 
                 </p>
               </div>
             </div>
           </div>
+        </div>
+      </div>
 
-         <div className="row align-items-stretch mb-4 g-3">
+
+
+
+
+
+
+
+
+
+
+
+        <div className="row align-items-stretch mb-4 g-3">
         <div className="col-md-8 d-flex">
           <div className="card p-4 border w-100">
             <h3 style={{ color: "#36b0a1", marginBottom: "1.5rem" }}>Lenguajes de Programación</h3>

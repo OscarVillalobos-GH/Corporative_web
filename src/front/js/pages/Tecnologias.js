@@ -3,10 +3,13 @@ import "../../styles/home.css";
 import nubeGIF from "../../img/nube.gif";
 import NetCore from "../../img/NetCore.png"; // Asegúrate de que el archivo nube.gif esté en la carpeta img
 import SCRUM from "../../img/SCRUM.jpg"; // Asegúrate de que el archivo SCRUM.jpg esté en la carpeta img
+import desarrolloWEB from "../../img/desarrolloWEB.png";
 
 export const Tecnologias = () => {
   return (
+
     <div className="position-relative">
+      
       {/* Sección inicial con GIF y texto, sin imagen de fondo */}
       <section className="ecommerce-section" style={{ marginTop: "100px" }}>
         <div className="row align-items-center">

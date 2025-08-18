@@ -1,5 +1,4 @@
 import React, { useRef, useState } from "react";
-import emailjs from "@emailjs/browser";
 import "../../styles/home.css";
 import desarrolloWEB from "../../img/desarrolloWEB.png";
 import appWeb from "../../img/appWeb.png";
@@ -8,81 +7,16 @@ import frameworks from "../../img/frameworks.jpg";
 import frameworksBack from "../../img/frameworksBack.webp";
 import baseDatos from "../../img/baseDatos.webp";
 import tecnologiasNUBE from "../../img/tecnologiasNUBE.webp";
+import lenguajesGif from "../../img/lenguajesGif.gif";
 
 export const DesarrolloAplicacionesWeb = () => {
   const form = useRef();
   const [errors, setErrors] = useState({});
-  const [selectedCountry, setSelectedCountry] = useState({
-    code: "+56",
-    name: "Chile",
-  });
-  const [phoneNumber, setPhoneNumber] = useState("");
-
-  const countries = [
-    { code: "+54", name: "Argentina" },
-    { code: "+61", name: "Australia" },
-    { code: "+56", name: "Chile" },
-    { code: "+64", name: "New Zealand" },
-  ];
-
-  const validateForm = () => {
-    const newErrors = {};
-    if (!form.current["service"].value)
-      newErrors.service = "Completa este campo obligatorio.";
-    if (!form.current["name"].value)
-      newErrors.name = "Completa este campo obligatorio.";
-    if (!phoneNumber) newErrors.phone = "Completa este campo obligatorio.";
-    if (!form.current["email"].value)
-      newErrors.email = "Completa este campo obligatorio.";
-    if (!form.current["company"].value)
-      newErrors.company = "Completa este campo obligatorio.";
-    if (!form.current["position"].value)
-      newErrors.position = "Completa este campo obligatorio.";
-    if (!form.current["industry"].value)
-      newErrors.industry = "Completa este campo obligatorio.";
-    if (!form.current["employees"].value)
-      newErrors.employees = "Completa este campo obligatorio.";
-    if (!form.current["message"].value)
-      newErrors.message = "Completa este campo obligatorio.";
-    return newErrors;
-  };
-
-  const sendEmail = (e) => {
-    e.preventDefault();
-
-    const newErrors = validateForm();
-    if (Object.keys(newErrors).length > 0) {
-      setErrors(newErrors);
-      return;
-    }
-
-    form.current["phone"].value = `${selectedCountry.code}${phoneNumber}`;
-
-    emailjs
-      .sendForm(
-        process.env.REACT_APP_EMAILJS_SERVICE_ID,
-        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-        form.current,
-        process.env.REACT_APP_EMAILJS_USER_ID
-      )
-      .then(
-        (result) => {
-          alert("Mensaje enviado con éxito!");
-          form.current.reset();
-          setErrors({});
-          setSelectedCountry({ code: "+56", name: "Chile" });
-          setPhoneNumber("");
-        },
-        (error) => {
-          alert("Error al enviar el mensaje, intenta de nuevo.");
-          console.log(error.text);
-        }
-      );
-  };
-
+ 
   return (
     <div className="position-relative">
       {/* Fondo del título principal */}
+
       <div
         className="hero-container"
         style={{
@@ -101,7 +35,9 @@ export const DesarrolloAplicacionesWeb = () => {
       {/* Contenido principal con corrección de centrado */}
 
       <div style={{ position: "relative", zIndex: 1 }}>
+
         {/* Hero Section - Ahora completamente centrado */}
+
         <section 
           className="hero-content mb-5" 
           style={{ 
@@ -132,7 +68,7 @@ export const DesarrolloAplicacionesWeb = () => {
 
         {/* Resto del componente permanece igual */}
 
-        <section className="ecommerce-section" style={{ paddingTop: "45vh" }}>
+        <section className="ecommerce-section" style={{ paddingTop: "53vh" }}>
           <div className="row align-items-stretch">
             <div className="col-md-6 d-flex">
               <div className="card p-4 d-flex" style={{ backgroundColor: "rgba(255, 255, 255, 0.9)" }}>
@@ -313,33 +249,85 @@ export const DesarrolloAplicacionesWeb = () => {
             continuación, exploramos las herramientas más utilizadas.
           </p>
 
-          <div className="row align-items-center mb-4">
-            <div className="col-md-3">
-              <div className="card p-4 border">
-                <img
-                  src={appWeb}
-                  alt="Lenguajes de Programación"
-                  className="img-fluid rounded mb-3"
-                />
-              </div>
-            </div>
-            <div className="col-md-9">
-              <div className="card p-4 border">
-                <h3 style={{ color: "#36b0a1" }}>Lenguajes de Programación</h3>
-                <p>
-                  Utilizamos lenguajes esenciales para desarrollar soluciones
-                  robustas. Incluyen opciones versátiles para frontend, backend
-                  y análisis de datos.
-                </p>
-                <p> <strong>JavaScript:</strong> Ideal para frontend y backend con Node.js.</p>
-                <p><strong> Python: </strong>Fácil de usar, ideal para IA y análisis.</p>
-                <p><strong> PHP: </strong>Perfecto para gestión de bases de datos.</p>
-                <p> <strong>Ruby:</strong> Popular en startups con Ruby on Rails.</p>
-              </div>
+
+  <div className="row align-items-stretch mb-4 g-3">
+  <div className="col-md-5 d-flex">
+            <div className="card p-3 border w-100 d-flex align-items-center justify-content-center bg-dark"> {/* Fondo oscuro para contraste */}
+              <img
+                src={lenguajesGif}
+                alt="Frameworks Backend"
+                className="img-fluid rounded"
+                style={{
+                  maxHeight: "280px",
+                  width: "auto",
+                  objectFit: "contain",
+                  filter: "brightness(1.05)" /* Ajuste de brillo para mejor visualización */
+                }}
+              />
             </div>
           </div>
 
-            <div className="row align-items-stretch mb-4 g-3">
+          <div className="col-md-7 d-flex">
+            <div className="card p-4 border w-100">
+              <h3 style={{ color: "#36b0a1", marginBottom: "1.5rem" }}>Lenguajes de Programación</h3>
+              <p className="mb-4">
+                Utilizamos lenguajes esenciales para desarrollar soluciones robustas. Incluyen opciones versátiles para frontend, backend y análisis de datos.
+              </p>
+              
+              <div className="backend-tech-list">
+                <div className="d-flex align-items-start mb-3">
+                  <div className="tech-icon me-3" style={{ color: "#68A063" }}> {/* Color Node.js */}
+                    <i className="fab fa-node-js fa-2x"></i>
+                  </div>
+                  <div>
+                    <h5 className="mb-1">JavaScript:</h5>
+                    <p className="mb-0">
+                      Ideal para frontend y backend con Node.js.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="d-flex align-items-start mb-3">
+                  <div className="tech-icon me-3" style={{ color: "#092E20" }}> {/* Color Django */}
+                    <i className="fab fa-python fa-2x"></i>
+                  </div>
+                  <div>
+                    <h5 className="mb-1">Python:</h5>
+                    <p className="mb-0">
+                      Fácil de usar, ideal para IA y análisis.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="d-flex align-items-start mb-3">
+                   <div className="tech-icon me-3" style={{ color: "#092E20" }}> {/* Color Django */}
+                    <i className="fab fa-php fa-2x"></i>
+                  </div>
+                  <div>
+                    <h5 className="mb-1">PHP:</h5>
+                    <p className="mb-0">
+                      Perfecto para gestión de bases de datos.
+                    </p>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+ <div className="row align-items-stretch mb-4 g-3">
   <div className="col-md-8 d-flex">
     <div className="card p-4 border w-100">
       <h3 style={{ color: "#36b0a1", marginBottom: "1.5rem" }}>Frameworks Frontend</h3>
@@ -403,6 +391,7 @@ export const DesarrolloAplicacionesWeb = () => {
       </div>
     </div>
   </div>
+
 
         <div className="row align-items-stretch mb-4 g-3">
           <div className="col-md-5 d-flex">
@@ -468,6 +457,10 @@ export const DesarrolloAplicacionesWeb = () => {
             </div>
           </div>
         </div>
+
+
+
+
 
 <div className="row align-items-stretch mb-4 g-3">
   <div className="col-lg-8 d-flex"> {/* Cambiado a col-lg para mejor responsividad */}

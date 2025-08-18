@@ -129,7 +129,10 @@ export const Navbar = () => {
         onMouseLeave={(e) => e.currentTarget.style.backgroundColor = ''}
       >
         <i className="fas fa-code me-2 text-muted"></i>
-        <span>Desarrollo Web</span>
+        <div>
+        <div>Desarrollo Web</div>
+        <small className="text-muted">Su Sitio</small>
+        </div>
       </Link>
     </li>
     <li>
@@ -141,7 +144,10 @@ export const Navbar = () => {
         onMouseLeave={(e) => e.currentTarget.style.backgroundColor = ''}
       >
         <i className="fas fa-plug me-2 text-muted"></i>
-        <span>Integraciones y APIs</span>
+        <div>
+        <div>Integraciones y APIs</div>
+        <small className="text-muted">Conectemos</small>
+        </div>
       </Link>
     </li>
     <li>
@@ -153,7 +159,10 @@ export const Navbar = () => {
         onMouseLeave={(e) => e.currentTarget.style.backgroundColor = ''}
       >
         <i className="fas fa-microchip me-2 text-muted"></i>
-        <span>Tecnologías</span>
+        <div>
+        <div>Tecnologias</div>
+        <small className="text-muted">Optimizamos</small>
+        </div>
       </Link>
     </li>
   </ul>
