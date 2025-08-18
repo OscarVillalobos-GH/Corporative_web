@@ -212,7 +212,7 @@ export const Ecommerce = () => {
                 <div className="card-body d-flex flex-column">
                   <h3 style={{ color: '#001c30' }}>Started</h3>
                   <a
-                    href="https://wa.me/56995334317?text=Hola,%20me%20interesa%20el%20Plan%20ECommerce%20de%20sitio%20web"
+                    href="https://wa.me/64221031551?text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn btn-primary mb-3"
@@ -242,7 +242,7 @@ export const Ecommerce = () => {
                  
 
                   <a
-                    href="https://wa.me/56995334317?text=Hola,%20me%20interesa%20el%20Plan%20ECommerce%20de%20sitio%20web"
+                    href="https://wa.me/64221031551?text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn btn-primary mb-3"
@@ -277,7 +277,7 @@ export const Ecommerce = () => {
                   <h3 style={{ color: '#001c30' }}>A Medida</h3>
                   <p className="lead text-muted" style={{ color: '#555' }}>PARA EMPRESAS</p>
                   <a
-                    href="https://wa.me/56995334317?text=Hola,%20me%20gustaría%20cotizar%20un%20sitio%20web%20a%20medida"
+                    href="https://wa.me/64221031551?text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn btn-success mb-3"
@@ -297,7 +297,7 @@ export const Ecommerce = () => {
     
 
         <a
-          href="https://wa.me/56995334317?text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios"
+          href="https://wa.me/64221031551?text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios"
           target="_blank"
           rel="noopener noreferrer"
           className="whatsapp-float"

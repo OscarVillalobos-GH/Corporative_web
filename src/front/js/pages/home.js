@@ -145,6 +145,23 @@ export const Home = () => {
         </div>
       </section>
 
+              <a
+          href="https://wa.me/64221031551?text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="whatsapp-float"
+          style={{
+            position: "fixed",
+            bottom: "20px",
+            right: "20px",
+            fontSize: "40px",
+            color: "#25D366",
+            textDecoration: "none",
+          }}
+        >
+          <i className="fab fa-whatsapp"></i>
+        </a>
+
     </div>
   );
 };

@@ -109,7 +109,7 @@ export const Erpservicios = () => {
 
       {/* Ícono flotante de WhatsApp */}
       <a
-        href="https://wa.me/56995334317?text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios"
+         href="https://wa.me/64221031551?text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios"
         target="_blank"
         rel="noopener noreferrer"
         className="whatsapp-float"

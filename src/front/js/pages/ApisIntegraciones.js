@@ -338,17 +338,6 @@ export const ApisIntegraciones = () => {
         </div>
       </div>
 
-
-
-
-
-
-
-
-
-
-
-
         <div className="row align-items-stretch mb-4 g-3">
         <div className="col-md-8 d-flex">
           <div className="card p-4 border w-100">
@@ -467,24 +456,53 @@ export const ApisIntegraciones = () => {
 
           
           <div className="row align-items-stretch mb-4"> {/* Cambiado a align-items-stretch */}
-          <div className="col-md-8 d-flex">
-            <div className="card p-4 border w-100"> {/* Añadido w-100 */}
-              <h3 style={{ color: "#36b0a1" }}>
-                Herramientas de Seguridad y Autenticación
-              </h3>
-              <div className="mb-0"> {/* Eliminado el párrafo contenedor para mejor control */}
-                <p className="mb-2"> {/* Añadido margen inferior a cada párrafo */}
-                 <strong> OAuth 2.0:</strong> Protocolo de autorización seguro para compartir datos.
-                </p>
-                <p className="mb-2">
-                 <strong> JWT (JSON Web Tokens):</strong> Sistema de autenticación segura para APIs.
-                </p>
-                <p className="mb-0"> {/* mb-0 para el último elemento */}
-                  <strong>SSL/TLS:</strong> Cifrado de datos en tránsito para proteger la comunicación.
-                </p>
-              </div>
-            </div>
-          </div>
+
+<div className="col-md-8 d-flex">
+  <div className="card p-4 border w-100">
+    <h3 style={{ color: "#36b0a1", marginBottom: "1.5rem" }}>
+      Herramientas de Seguridad y Autenticación
+    </h3>
+    
+    <div className="tech-items">
+      <div className="d-flex align-items-start mb-3">
+        <div className="tech-icon me-3" style={{ color: "#eb5424" }}>
+          <i className="fas fa-user-shield fa-2x"></i> {/* OAuth icon */}
+        </div>
+        <div>
+          <h5 className="mb-1">OAuth 2.0</h5>
+          <p className="mb-0">
+            Protocolo de autorización seguro para compartir datos.
+          </p>
+        </div>
+      </div>
+
+      <div className="d-flex align-items-start mb-3">
+        <div className="tech-icon me-3" style={{ color: "#63a4ff" }}>
+          <i className="fas fa-key fa-2x"></i> {/* JWT icon */}
+        </div>
+        <div>
+          <h5 className="mb-1">JWT (JSON Web Tokens)</h5>
+          <p className="mb-0">
+            Sistema de autenticación segura para APIs.
+          </p>
+        </div>
+      </div>
+
+      <div className="d-flex align-items-start">
+        <div className="tech-icon me-3" style={{ color: "#3c78d8" }}>
+          <i className="fas fa-lock fa-2x"></i> {/* SSL/TLS icon */}
+        </div>
+        <div>
+          <h5 className="mb-1">SSL/TLS</h5>
+          <p className="mb-0">
+            Cifrado de datos en tránsito para proteger la comunicación.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
           <div className="col-md-4 d-flex">
             <div className="card p-4 border w-100 d-flex flex-column"> {/* Flex column para la imagen */}
               <img
@@ -674,7 +692,7 @@ export const ApisIntegraciones = () => {
 
 
         <a
-          href="https://wa.me/56995334317?text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios"
+           href="https://wa.me/64221031551?text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios"
           target="_blank"
           rel="noopener noreferrer"
           className="whatsapp-float"

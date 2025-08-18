@@ -13,6 +13,28 @@ export const Navbar = () => {
       </div>
       <ul className="navbar-links">
 
+        <li className="nav-item position-relative">
+          <Link
+            to="/"
+            className="nav-link d-flex align-items-center py-3 px-3"
+            style={{
+              transition: 'all 0.3s ease',
+              borderRadius: '4px',
+              color: 'inherit'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.color = '#36b0a1';
+              e.currentTarget.style.backgroundColor = '#f8f9fa';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.color = 'inherit';
+              e.currentTarget.style.backgroundColor = 'transparent';
+            }}
+          >
+            <i className="fas fa-home me-2" style={{ color: '#f57c0bff' }}></i> {/* Icono Home */}
+            <span>Home</span>
+          </Link>
+        </li>
 
 
 <li className="nav-item dropdown position-relative">
@@ -107,7 +129,7 @@ export const Navbar = () => {
     onMouseEnter={(e) => e.currentTarget.classList.add('bg-light')}
     onMouseLeave={(e) => e.currentTarget.classList.remove('bg-light')}
   >
-    <i className="fas fa-laptop-code me-2" style={{ color: '#36b0a1' }}></i> {/* Nuevo icono */}
+    <i className="fas fa-laptop-code me-2" style={{ color: '#12eb1dff' }}></i> {/* Nuevo icono */}
     Desarrollo
 
   </span>
@@ -187,7 +209,7 @@ export const Navbar = () => {
             e.currentTarget.style.backgroundColor = 'transparent';
           }}
         >
-          <i className="fas fa-shopping-cart me-2"></i> {/* Icono eCommerce */}
+          <i className="fas fa-shopping-cart me-2"style={{ color: '#fa0808ff' }}></i> {/* Icono eCommerce */}
           <span>eCommerce</span>
         
         </Link>
@@ -212,7 +234,7 @@ export const Navbar = () => {
                 e.currentTarget.style.backgroundColor = 'transparent';
               }}
             >
-              <i className="fas fa-project-diagram me-2"></i> {/* Icono proyectos */}
+              <i className="fas fa-project-diagram me-2"style={{ color: '#5a0bd8ff' }}></i> {/* Icono proyectos */}
               <span>Proyectos</span>
             </Link>
           </li>
@@ -235,7 +257,7 @@ export const Navbar = () => {
                 e.currentTarget.style.backgroundColor = 'transparent';
               }}
             >
-              <i className="fas fa-users me-2"></i> {/* Icono nosotros */}
+              <i className="fas fa-users me-2" style={{ color: '#d4f806ff' }}></i> {/* Icono nosotros */}
               <span>Nosotros</span>
             </Link>
           </li>

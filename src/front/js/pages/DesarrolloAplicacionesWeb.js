@@ -105,9 +105,6 @@ export const DesarrolloAplicacionesWeb = () => {
           </div>
         </section>
 
-
-
-
         <section className="mb-5 ecommerce-section">
           <div className="row align-items-center">
             <div className="col-md-12">
@@ -726,7 +723,7 @@ export const DesarrolloAplicacionesWeb = () => {
        
 
         <a
-          href="https://wa.me/56995334317?text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios"
+           href="https://wa.me/64221031551?text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios"
           target="_blank"
           rel="noopener noreferrer"
           className="whatsapp-float"
