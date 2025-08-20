@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../styles/home.css";
 
 import SAP_one from "../../img/12_bbdd-300x140.jpg";
 import SAP_two from "../../img/13_BI_productos.jpg";
 import SAP_three from "../../img/14_integraciones.jpg";
 import SAP_four from "../../img/15_demo_PWBI.jpg";
-
+import App from "../../img/app.png";
+import Medicos from "../../img/Medicos.png";
 
 export const Projects = () => {
   const services = [];
@@ -22,12 +23,22 @@ export const Projects = () => {
     {
       id: 7,
       title: "Aplicación de Agendamiento Médico",
-      description:
-        "Para controlar tu agenda de Citas. Ve nuestro video.",
-      image: null,
+      description: "Para controlar tu agenda de Citas. Ve nuestro video.",
+      image: Medicos,
       link: "#",
     },
+    {
+      id: 8,
+      title:
+        "Aplicación de Manejo de logistica, inventario, creación y seguimiento de despachos",
+      description:
+        "Crea y sigue despachos en tiempo real, genera PDF con código de barras y administra productos, clientes y choferes en un solo lugar.",
+      image: App,
+      link: "https://signoapp-front.onrender.com/",
+    },
   ];
+
+  const [hoverId, setHoverId] = useState(null);
 
   return (
     <section className="erp-page" style={{ padding: "40px", backgroundColor: "#f9f9f9" }}>
@@ -77,29 +88,90 @@ export const Projects = () => {
               transition: "transform 0.2s",
             }}
           >
-            {module.id === 7 ? (
-              <video width="100%" height="auto" controls style={{ borderRadius: "6px" }}>
-                <source src="/videos/Video_Agenda.mp4" type="video/mp4" />
-                Tu navegador no soporta video HTML5.
-              </video>
-            ) : (
-              <a href={module.link} target="_blank" rel="noopener noreferrer">
+            <a
+              href={module.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Abrir proyecto"
+              onMouseEnter={() => setHoverId(module.id)}
+              onMouseLeave={() => setHoverId(null)}
+              style={{ display: "block", position: "relative", cursor: "pointer" }}
+            >
+              {/* CONTENEDOR FIJO (mismo alto para 7 y 8) */}
+              <div
+                style={
+                  module.id === 7 || module.id === 8
+                    ? {
+                      width: "100%",
+                      height: "180px", // alto uniforme
+                      borderRadius: "6px 6px 0 0",
+                      backgroundColor: "#f9f9f9",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      overflow: "hidden",
+                    }
+                    : {
+                      width: "100%",
+                      height: "auto",
+                      borderRadius: "6px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }
+                }
+              >
                 <img
                   src={module.image}
                   alt={module.title}
-                  style={{
-                    width: "120px",
-                    height: "80px",
-                    objectFit: "contain",
-                    borderRadius: "6px",
-                    display: "block",
-                    margin: "0 auto",
-                  }}
+                  style={
+                    module.id === 7 || module.id === 8
+                      ? {
+                        maxWidth: "100%",
+                        maxHeight: "100%",
+                        width: "auto",
+                        height: "auto",
+                        display: "block",
+                      }
+                      : {
+                        width: "120px",
+                        height: "80px",
+                        objectFit: "contain",
+                        display: "block",
+                      }
+                  }
                 />
-              </a>
-            )}
-            <h4 style={{ marginTop: "15px", fontSize: "18px", color: "#333" }}>{module.title}</h4>
-            <p style={{ fontSize: "14px", color: "#666", marginTop: "10px" }}>{module.description}</p>
+              </div>
+
+              {/* Overlay al hover */}
+              <div
+                aria-hidden="true"
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  borderRadius: module.id === 7 || module.id === 8 ? "6px 6px 0 0" : "6px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  background: hoverId === module.id ? "rgba(0,0,0,0.35)" : "transparent",
+                  color: "#fff",
+                  fontSize: "14px",
+                  fontWeight: 600,
+                  opacity: hoverId === module.id ? 1 : 0,
+                  transition: "opacity 160ms ease",
+                  pointerEvents: "none",
+                }}
+              >
+                Abrir proyecto ↗
+              </div>
+            </a>
+
+            <h4 style={{ marginTop: "15px", fontSize: "18px", color: "#333" }}>
+              {module.title}
+            </h4>
+            <p style={{ fontSize: "14px", color: "#666", marginTop: "10px" }}>
+              {module.description}
+            </p>
           </div>
         ))}
       </div>
@@ -143,9 +215,50 @@ export const Projects = () => {
         ))}
       </div>
 
+      <div
+        className="services-container"
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "center",
+          gap: "30px",
+        }}
+      >
+        {services.map((service) => (
+          <div
+            key={service.id}
+            className="service-box"
+            style={{
+              backgroundColor: "#fff",
+              borderRadius: "10px",
+              boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
+              width: "300px",
+              padding: "20px",
+              textAlign: "center",
+            }}
+          >
+            <a href={service.link} target="_blank" rel="noopener noreferrer">
+              <img
+                src={service.image}
+                alt={service.title}
+                style={{
+                  width: "100%",
+                  height: "180px",
+                  objectFit: "cover",
+                  borderRadius: "6px 6px 0 0",
+                  display: "block",
+                }}
+              />
+            </a>
+            <h4 style={{ marginTop: "15px" }}>{service.title}</h4>
+            <p style={{ fontSize: "15px", marginTop: "10px" }}>{service.description}</p>
+          </div>
+        ))}
+      </div>
+
       {/* Ícono flotante de WhatsApp */}
       <a
-        href="https://wa.me/56995334317?text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios"
+        href="https://wa.me/64221031551?text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios"
         target="_blank"
         rel="noopener noreferrer"
         className="whatsapp-float"

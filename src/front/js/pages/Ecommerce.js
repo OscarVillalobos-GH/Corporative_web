@@ -9,77 +9,7 @@ export const Ecommerce = () => {
   const [showFormModal, setShowFormModal] = useState(false);
   const form = useRef();
   const [errors, setErrors] = useState({});
-  const [selectedCountry, setSelectedCountry] = useState({
-    code: "+56",
-    name: "Chile",
-  });
-  const [phoneNumber, setPhoneNumber] = useState("");
 
-  // Lista completa de países con códigos telefónicos
-  const countries = [
-   { code: "+54", name: "Argentina" },
-    { code: "+61", name: "Australia" },
-    { code: "+56", name: "Chile" },
-    { code: "+64", name: "New Zealand" },
-  ];
-
-  // Función para validar el formulario
-  const validateForm = () => {
-    const newErrors = {};
-    if (!form.current["service"].value)
-      newErrors.service = "Completa este campo obligatorio.";
-    if (!form.current["name"].value)
-      newErrors.name = "Completa este campo obligatorio.";
-    if (!phoneNumber) newErrors.phone = "Completa este campo obligatorio.";
-    if (!form.current["email"].value)
-      newErrors.email = "Completa este campo obligatorio.";
-    if (!form.current["company"].value)
-      newErrors.company = "Completa este campo obligatorio.";
-    if (!form.current["position"].value)
-      newErrors.position = "Completa este campo obligatorio.";
-    if (!form.current["industry"].value)
-      newErrors.industry = "Completa este campo obligatorio.";
-    if (!form.current["employees"].value)
-      newErrors.employees = "Completa este campo obligatorio.";
-    if (!form.current["message"].value)
-      newErrors.message = "Completa este campo obligatorio.";
-    return newErrors;
-  };
-
-  // Función para enviar el formulario con EmailJS
-  const sendEmail = (e) => {
-    e.preventDefault();
-
-    const newErrors = validateForm();
-    if (Object.keys(newErrors).length > 0) {
-      setErrors(newErrors);
-      return;
-    }
-
-    form.current["phone"].value = `${selectedCountry.code}${phoneNumber}`;
-
-    emailjs
-      .sendForm(
-        process.env.REACT_APP_EMAILJS_SERVICE_ID,
-        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-        form.current,
-        process.env.REACT_APP_EMAILJS_USER_ID
-      )
-      .then(
-        (result) => {
-          alert("Mensaje enviado con éxito!");
-          form.current.reset();
-          setErrors({});
-          setSelectedCountry({ code: "+56", name: "Chile" });
-          setPhoneNumber("");
-          setShowFormModal(false);
-        },
-        (error) => {
-          alert("Error al enviar el mensaje, intenta de nuevo.");
-          console.log(error.text);
-        }
-      );
-  };
 
   return (
     <div className="position-relative">
@@ -282,7 +212,7 @@ export const Ecommerce = () => {
                 <div className="card-body d-flex flex-column">
                   <h3 style={{ color: '#001c30' }}>Started</h3>
                   <a
-                    href="https://wa.me/56995334317?text=Hola,%20me%20interesa%20el%20Plan%20ECommerce%20de%20sitio%20web"
+                    href="https://wa.me/64221031551?text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn btn-primary mb-3"
@@ -312,7 +242,7 @@ export const Ecommerce = () => {
                  
 
                   <a
-                    href="https://wa.me/56995334317?text=Hola,%20me%20interesa%20el%20Plan%20ECommerce%20de%20sitio%20web"
+                    href="https://wa.me/64221031551?text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn btn-primary mb-3"
@@ -347,11 +277,11 @@ export const Ecommerce = () => {
                   <h3 style={{ color: '#001c30' }}>A Medida</h3>
                   <p className="lead text-muted" style={{ color: '#555' }}>PARA EMPRESAS</p>
                   <a
-                    href="https://wa.me/56995334317?text=Hola,%20me%20gustaría%20cotizar%20un%20sitio%20web%20a%20medida"
+                    href="https://wa.me/64221031551?text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn btn-success mb-3"
-                    style={{ backgroundColor: '#3dbdb3', borderColor: '#3dbdb3' }}
+                     style={{ backgroundColor: '#36b0a1', borderColor: '#36b0a1' }}
                   >
                     CONTÁCTANOS
                   </a>
@@ -364,339 +294,10 @@ export const Ecommerce = () => {
           </div>
         </section>
 
-        <section className="mb-5 ecommerce-section">
-          <div className="row align-items-center">
-            <div className="col-md-8 order-md-2">
-              <h2 style={{ color: '#36b0a1' }}>Nuestro Compromiso</h2>
-              <p style={{ color: '#555' }}>
-                Más que el Desarrollo es el Impulso para tu Crecimiento Empresarial. No solo creamos sitios web; desarrollamos herramientas estratégicas diseñadas para potenciar el crecimiento y la evolución de tu negocio.
-              </p>
-              <button
-                className="btn btn-primary"
-                style={{ backgroundColor: '#36b0a1', borderColor: '#36b0a1' }}
-                onClick={() => setShowModal(true)}
-              >
-                ¡Hablemos!
-              </button>
-            </div>
-            <div className="col-md-4 order-md-1">
-              <img
-                src={cohete}
-                alt="Laptop con Cohete"
-                className="img-fluid rounded"
-                style={{ maxWidth: "90%", maxHeight: "300px" }}
-              />
-            </div>
-          </div>
-        </section>
-
-        {showModal && (
-          <div
-            className="modal"
-            style={{
-              position: "fixed",
-              top: 0,
-              left: 0,
-              width: "100%",
-              height: "100%",
-              backgroundColor: "rgba(0, 0, 0, 0.5)",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              zIndex: 1000,
-            }}
-            onClick={() => setShowModal(false)}
-          >
-            <div
-              className="modal-content"
-              style={{
-                backgroundColor: "#fff",
-                padding: "20px",
-                borderRadius: "10px",
-                textAlign: "center",
-                width: "300px",
-              }}
-              onClick={(e) => e.stopPropagation()}
-            >
-              <h3 style={{ color: '#36b0a1' }}>¿Cómo deseas contactarnos?</h3>
-              <button
-                className="btn btn-success w-100 mb-2"
-                style={{ backgroundColor: '#3dbdb3', borderColor: '#3dbdb3' }}
-                onClick={() => {
-                  window.open(
-                    "https://wa.me/56995334317?text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios",
-                    "_blank"
-                  );
-                  setShowModal(false);
-                }}
-              >
-                <i className="fab fa-whatsapp" style={{ color: '#fff' }}></i> Chatear por WhatsApp
-              </button>
-              <button
-                className="btn btn-primary w-100"
-                style={{ backgroundColor: '#36b0a1', borderColor: '#36b0a1' }}
-                onClick={() => {
-                  setShowModal(false);
-                  setShowFormModal(true);
-                }}
-              >
-                Enviar Formulario
-              </button>
-            </div>
-          </div>
-        )}
-
-        {showFormModal && (
-          <div
-            className="modal"
-            style={{
-              position: "fixed",
-              top: 0,
-              left: 0,
-              width: "100%",
-              height: "100%",
-              backgroundColor: "rgba(0, 0, 0, 0.5)",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              zIndex: 1000,
-            }}
-            onClick={() => setShowFormModal(false)}
-          >
-            <div
-              className="modal-content"
-              style={{
-                backgroundColor: "#fff",
-                padding: "20px",
-                borderRadius: "10px",
-                width: "500px",
-                maxHeight: "90vh",
-                overflowY: "auto",
-              }}
-              onClick={(e) => e.stopPropagation()}
-            >
-              <h3 style={{ color: '#36b0a1' }} className="text-center">Formulario de Contacto</h3>
-              <form ref={form} onSubmit={sendEmail}>
-                <div className="mb-3">
-                  <label htmlFor="service" className="form-label" style={{ color: '#333' }}>
-                    Seleccione el servicio a consultar
-                  </label>
-                  <select
-                    className="form-select"
-                    id="service"
-                    name="service"
-                    required
-                    style={{ color: '#333', backgroundColor: '#fff' }}
-                  >
-                    <option value="">Selecciona</option>
-                    <option>ERP (SAP BUSINESS ONE, ASESORIAS Y MIGRACIONES)</option>
-                    <option>Consultoría tecnológica</option>
-                    <option>Data AnalIsis - Integración entre sistemas</option>
-                    <option>Visualización de Datos</option>
-                    <option>Desarrollo sofware</option>
-                    <option>E-commerce y Marketplace</option>
-                    <option>Mantención y soporte de infraestructura tecnológica</option>
-                    <option>Migración a la nube</option>
-                    <option>Seguridad de la informacion</option>
-                    <option>Aplicaciones web</option>
-                    <option>Otros</option>
-                  </select>
-                  {errors.service && <p style={{ color: "#FF0000" }}>{errors.service}</p>}
-                </div>
-
-                <div className="mb-3">
-                  <label htmlFor="name" className="form-label" style={{ color: '#333' }}>
-                    Nombre completo
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="name"
-                    name="name"
-                    required
-                    style={{ color: '#333', backgroundColor: '#fff' }}
-                  />
-                  {errors.name && <p style={{ color: "#FF0000" }}>{errors.name}</p>}
-                </div>
-
-                <div className="mb-3">
-                  <label htmlFor="phone" className="form-label" style={{ color: '#333' }}>
-                    Teléfono
-                  </label>
-                  <div className="input-group">
-                    <select
-                      className="form-select"
-                      style={{ maxWidth: "150px", color: '#333', backgroundColor: '#fff' }}
-                      value={selectedCountry.name}
-                      onChange={(e) => {
-                        const country = countries.find((c) => c.name === e.target.value);
-                        setSelectedCountry(country || { code: "+56", name: "Chile" });
-                        setPhoneNumber("");
-                      }}
-                    >
-                      {countries.map((country) => (
-                        <option key={country.code} value={country.name}>
-                          {country.name}
-                        </option>
-                      ))}
-                    </select>
-                    <input
-                      type="tel"
-                      className="form-control"
-                      id="phone"
-                      name="phone"
-                      value={phoneNumber}
-                      onChange={(e) => setPhoneNumber(e.target.value)}
-                      placeholder="Número"
-                      required
-                      style={{ color: '#333', backgroundColor: '#fff' }}
-                    />
-                  </div>
-                  {errors.phone && <p style={{ color: "#FF0000" }}>{errors.phone}</p>}
-                </div>
-
-                <div className="mb-3">
-                  <label htmlFor="email" className="form-label" style={{ color: '#333' }}>
-                    Correo corporativo
-                  </label>
-                  <input
-                    type="email"
-                    className="form-control"
-                    id="email"
-                    name="email"
-                    required
-                    style={{ color: '#333', backgroundColor: '#fff' }}
-                  />
-                  {errors.email && <p style={{ color: "#FF0000" }}>{errors.email}</p>}
-                </div>
-
-                <div className="mb-3">
-                  <label htmlFor="company" className="form-label" style={{ color: '#333' }}>
-                    Nombre de la empresa
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="company"
-                    name="company"
-                    required
-                    style={{ color: '#333', backgroundColor: '#fff' }}
-                  />
-                  {errors.company && <p style={{ color: "#FF0000" }}>{errors.company}</p>}
-                </div>
-
-                <div className="mb-3">
-                  <label htmlFor="position" className="form-label" style={{ color: '#333' }}>
-                    Cargo
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="position"
-                    name="position"
-                    required
-                    style={{ color: '#333', backgroundColor: '#fff' }}
-                  />
-                  {errors.position && <p style={{ color: "#FF0000" }}>{errors.position}</p>}
-                </div>
-
-                <div className="mb-3">
-                  <label htmlFor="industry" className="form-label" style={{ color: '#333' }}>
-                    Seleccione la industria
-                  </label>
-                  <select
-                    className="form-select"
-                    id="industry"
-                    name="industry"
-                    required
-                    style={{ color: '#333', backgroundColor: '#fff' }}
-                  >
-                    <option value="">Selecciona</option>
-                    <option>Agricultura</option>
-                    <option>Agua y gas</option>
-                    <option>Alimentación</option>
-                    <option>Automotriz</option>
-                    <option>Banca e inversiones</option>
-                    <option>Comercio y retail</option>
-                    <option>Comunicaciones (medios y tecnología)</option>
-                    <option>Construcción</option>
-                    <option>Educación</option>
-                    <option>Energía</option>
-                    <option>Hotelería y turismo</option>
-                    <option>Industria química</option>
-                    <option>Mercado de capitales</option>
-                    <option>Mineria</option>
-                    <option>Producción</option>
-                    <option>Salud</option>
-                    <option>Seguros</option>
-                    <option>Servicios públicos</option>
-                    <option>Telecomunicaciones</option>
-                    <option>Transporte</option>
-                    <option>Textiles</option>
-                    <option>Productos varios</option>
-                    <option>Emprendimiento personal</option>
-                    <option>Otra</option>
-                  </select>
-                  {errors.industry && <p style={{ color: "#FF0000" }}>{errors.industry}</p>}
-                </div>
-
-                <div className="mb-3">
-                  <label htmlFor="employees" className="form-label" style={{ color: '#333' }}>
-                    Cantidad de empleados
-                  </label>
-                  <select
-                    className="form-select"
-                    id="employees"
-                    name="employees"
-                    required
-                    style={{ color: '#333', backgroundColor: '#fff' }}
-                  >
-                    <option value="">Selecciona</option>
-                    <option>1 - 49</option>
-                    <option>50 - 99</option>
-                    <option>100 - 499</option>
-                    <option>1000 o mas</option>
-                  </select>
-                  {errors.employees && <p style={{ color: "#FF0000" }}>{errors.employees}</p>}
-                </div>
-
-                <div className="mb-3">
-                  <label htmlFor="message" className="form-label" style={{ color: '#333' }}>
-                    Mensaje
-                  </label>
-                  <textarea
-                    className="form-control"
-                    id="message"
-                    name="message"
-                    rows="4"
-                    required
-                    style={{ color: '#333', backgroundColor: '#fff' }}
-                  ></textarea>
-                  {errors.message && <p style={{ color: "#FF0000" }}>{errors.message}</p>}
-                </div>
-
-                <button
-                  type="submit"
-                  className="btn btn-primary w-100"
-                  style={{ backgroundColor: '#36b0a1', borderColor: '#36b0a1' }}
-                >
-                  Enviar
-                </button>
-                <button
-                  type="button"
-                  className="btn btn-secondary w-100 mt-2"
-                  style={{ backgroundColor: '#ddd', color: '#333' }}
-                  onClick={() => setShowFormModal(false)}
-                >
-                  Cancelar
-                </button>
-              </form>
-            </div>
-          </div>
-        )}
+    
 
         <a
-          href="https://wa.me/56995334317?text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios"
+          href="https://wa.me/64221031551?text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios"
           target="_blank"
           rel="noopener noreferrer"
           className="whatsapp-float"
