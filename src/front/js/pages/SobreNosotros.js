@@ -10,21 +10,27 @@ export const SobreNosotros = () => {
       name: "Alejandro Arraga",
       role: "Desarrollador Full-Stack Developer",
       image: alejandro,
-      skills: ["SQL Server", "PostgreSQL", "MySQL", "Python", "JavaScript", "HTML", "CSS", "Bootstrap", "Flask", "React", "APIs", "Git", "Node.js", "Jest", "Next.js"]
+      skills: ["SQL Server", "PostgreSQL", "MySQL", "Python", "JavaScript", "HTML", "CSS", "Bootstrap", "Tailwind CSS", "Flask", "React", "APIs", "Git", "Node.js", "Jest", "Next.js"],
+      linkedin: "https://www.linkedin.com/in/alejandro-arraga",
+      github: "https://github.com/LA9905",
     },
     {
       id: 2,
       name: "Saray Rodríguez",
       role: "Desarrolladora Full Stack - Diseñadora UX/UI",
       image: saray,
-      skills: ["SQL Server", "PostgreSQL", "Python", "MySQL", "JavaScript", "CSS", "React", "Flask", "Figma", "Adobe XD", "Photoshop / Illustrator"]
+      skills: ["SQL Server", "PostgreSQL", "Python", "MySQL", "JavaScript", "CSS", "React", "Flask", "Figma", "Adobe XD", "Photoshop / Illustrator"],
+      // Sin LinkedIn
+      github: "https://github.com/Sarayrodriguezz",
     },
     {
       id: 3,
       name: "Oscar Villalobos",
       role: "Consultor ERP y Desarrollos BI",
       image: oscar,
-      skills: ["Consultor Certificado SAP B1 ", "Manejo SQL y HANA DB", "Crystal Report", "Power BI", "Data Migration"]
+      skills: ["Consultor Certificado SAP B1 ", "Manejo SQL y HANA DB", "Crystal Report", "Power BI", "Data Migration"],
+      linkedin: "https://www.linkedin.com/in/oscarvillalobosflores",
+      github: "https://github.com/OscarVillalobos-GH",
     },
   ];
 
@@ -107,12 +113,33 @@ export const SobreNosotros = () => {
                 marginBottom: "15px",
               }}
             />
+
+            {/* Nombre (clicable a LinkedIn si existe, si no a GitHub) */}
             <h4 style={{ fontSize: "18px", marginBottom: "8px" }}>
-              {member.name}
+              {member.linkedin || member.github ? (
+                <a
+                  href={member.linkedin || member.github}  // usa LinkedIn si existe, sino GitHub
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    color: "#2c3e50",
+                    textDecoration: "none",
+                    borderBottom: "1px dashed #2c3e50",
+                    paddingBottom: "2px",
+                    transition: "color .2s ease",
+                  }}
+                  title={member.linkedin ? "Ver perfil en LinkedIn" : "Ver perfil en GitHub"}
+                >
+                  {member.name}
+                </a>
+              ) : (
+                member.name
+              )}
             </h4>
+
             <p style={{ color: "#666", fontSize: "14px" }}>{member.role}</p>
 
-            {/* Solo si tiene skills */}
+            {/* Skills */}
             {member.skills && (
               <ul style={{ textAlign: "left", paddingLeft: "20px", marginTop: "10px", fontSize: "14px" }}>
                 {member.skills.map((skill, index) => (
@@ -120,6 +147,43 @@ export const SobreNosotros = () => {
                 ))}
               </ul>
             )}
+
+            {/* Footer con iconos (GitHub obligatorio si existe) */}
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                gap: "14px",
+                marginTop: "14px",
+                borderTop: "1px solid #eee",
+                paddingTop: "12px",
+              }}
+            >
+              {member.github && (
+                <a
+                  href={member.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`GitHub de ${member.name}`}
+                  title="Ver repositorios en GitHub"
+                  style={{ color: "#333", fontSize: "20px" }}
+                >
+                  <i className="fab fa-github"></i>
+                </a>
+              )}
+              {member.linkedin && (
+                <a
+                  href={member.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`LinkedIn de ${member.name}`}
+                  title="Ver perfil en LinkedIn"
+                  style={{ color: "#0a66c2", fontSize: "20px" }}
+                >
+                  <i className="fab fa-linkedin"></i>
+                </a>
+              )}
+            </div>
           </div>
         ))}
       </div>
