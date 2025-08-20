@@ -1,299 +1,282 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import "../../styles/navbar.css";
 import logo from "../../img/logo-blanco.png";
 
 export const Navbar = () => {
-  return (
-    <nav className="navbar">
-      <div className="navbar-logo">
-        <Link to="/">
-          <img src={logo} alt="Logo" />
-        </Link>
-      </div>
-      <ul className="navbar-links">
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(null); // 'erp' | 'dev' | null
+  const [pinnedDropdown, setPinnedDropdown] = useState(null); // anclado por click en desktop
+  const navRef = useRef(null);
 
-        <li className="nav-item position-relative">
-          <Link
-            to="/"
-            className="nav-link d-flex align-items-center py-3 px-3"
-            style={{
-              transition: 'all 0.3s ease',
-              borderRadius: '4px',
-              color: 'inherit'
+  // ¿El dispositivo soporta hover y puntero fino? (desktop)
+  const [canHover, setCanHover] = useState(
+    typeof window !== "undefined" &&
+    window.matchMedia &&
+    window.matchMedia("(hover: hover) and (pointer: fine)").matches
+  );
+
+  useEffect(() => {
+    const mq = window.matchMedia("(hover: hover) and (pointer: fine)");
+    const handler = () => setCanHover(mq.matches);
+    mq.addEventListener?.("change", handler);
+    window.addEventListener("resize", handler);
+    return () => {
+      mq.removeEventListener?.("change", handler);
+      window.removeEventListener("resize", handler);
+    };
+  }, []);
+
+  // Al pasar a desktop, cierra todo
+  useEffect(() => {
+    const onResize = () => {
+      if (window.innerWidth >= 992) {
+        setMenuOpen(false);
+        setOpenDropdown(null);
+        setPinnedDropdown(null);
+      }
+    };
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
+  // Cerrar al hacer click fuera o con ESC
+  useEffect(() => {
+    const handleDocClick = (e) => {
+      if (!navRef.current) return;
+      if (!navRef.current.contains(e.target)) {
+        setOpenDropdown(null);
+        setPinnedDropdown(null);
+        setMenuOpen(false);
+      }
+    };
+    const handleEsc = (e) => {
+      if (e.key === "Escape") {
+        setOpenDropdown(null);
+        setPinnedDropdown(null);
+        setMenuOpen(false);
+      }
+    };
+    document.addEventListener("click", handleDocClick);
+    document.addEventListener("keydown", handleEsc);
+    return () => {
+      document.removeEventListener("click", handleDocClick);
+      document.removeEventListener("keydown", handleEsc);
+    };
+  }, []);
+
+  const toggleMenu = () => setMenuOpen((v) => !v);
+
+  // Alterna un dropdown. En desktop ancla/desancla; en móvil solo abre/cierra.
+  const handleToggle = (key) => {
+    if (canHover) {
+      // Desktop: decidir nextPin y forzar openDropdown en el mismo tick
+      setPinnedDropdown((prevPin) => {
+        const nextPin = prevPin === key ? null : key;
+        setOpenDropdown(nextPin); // si hay pin -> abierto; si no -> cerrado
+        return nextPin;
+      });
+    } else {
+      // Móvil: solo alternar abierto/cerrado
+      setOpenDropdown((prev) => (prev === key ? null : key));
+    }
+  };
+
+  const closeAll = () => {
+    setMenuOpen(false);
+    setOpenDropdown(null);
+    setPinnedDropdown(null);
+  };
+
+  return (
+    <nav className="navbar" role="navigation" aria-label="Principal" ref={navRef}>
+      <div className="nav-inner">
+        {/* Logo */}
+        <div className="navbar-logo">
+          <Link to="/" onClick={closeAll} aria-label="Ir a inicio">
+            <img src={logo} alt="Logo Compas" />
+          </Link>
+        </div>
+
+        {/* Botón hamburguesa */}
+        <button
+          className={`navbar-toggle ${menuOpen ? "active" : ""}`}
+          aria-label="Abrir menú"
+          aria-expanded={menuOpen}
+          aria-controls="navbar-links"
+          onClick={toggleMenu}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+
+        {/* Links */}
+        <ul id="navbar-links" className={`navbar-links ${menuOpen ? "open" : ""}`}>
+          {/* Home */}
+          <li className="nav-item">
+            <Link to="/" className="nav-link" onClick={closeAll}>
+              <i className="fas fa-home me-2" style={{ color: "#f57c0bff" }} />
+              Home
+            </Link>
+          </li>
+
+          {/* ERP */}
+          <li
+            className={`nav-item dropdown ${openDropdown === "erp" ? "open" : ""}`}
+            onMouseEnter={() => {
+              if (canHover && !pinnedDropdown) setOpenDropdown("erp");
             }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.color = '#36b0a1';
-              e.currentTarget.style.backgroundColor = '#f8f9fa';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.color = 'inherit';
-              e.currentTarget.style.backgroundColor = 'transparent';
+            onMouseLeave={() => {
+              if (canHover && !pinnedDropdown) setOpenDropdown(null);
             }}
           >
-            <i className="fas fa-home me-2" style={{ color: '#f57c0bff' }}></i> {/* Icono Home */}
-            <span>Home</span>
-          </Link>
-        </li>
-
-
-<li className="nav-item dropdown position-relative">
-  <span 
-    className="nav-link dropdown-toggle d-flex align-items-center py-3 px-3"
-    id="erpDropdown"
-    role="button"
-    data-bs-toggle="dropdown"
-    aria-expanded="false"
-    style={{
-      cursor: 'pointer',
-      transition: 'all 0.3s ease',
-      borderRadius: '4px'
-    }}
-    onMouseEnter={(e) => e.currentTarget.classList.add('bg-light')}
-    onMouseLeave={(e) => e.currentTarget.classList.remove('bg-light')}
-  >
-    <i className="fas fa-cubes me-2" style={{ color: '#36b0a1' }}></i> {/* Icono ERP */}
-    ERP
-   
-  </span>
-
-  <ul 
-    className="dropdown-menu shadow-lg border-0"
-    aria-labelledby="erpDropdown"
-    style={{
-      minWidth: '220px',
-      borderTop: '3px solid #36b0a1'
-    }}
-  >
-    <li>
-      <Link 
-        className="dropdown-item d-flex align-items-center py-2 px-3"
-        to="/erpservicios-page"
-        style={{ transition: 'all 0.2s ease' }}
-        onMouseEnter={(e) => e.currentTarget.style.backgroundColor =  '#fc8210ff'}
-        onMouseLeave={(e) => e.currentTarget.style.backgroundColor = ''}
-      >
-        <i className="fas fa-cogs me-2 text-muted"></i> {/* Icono servicios */}
-        <div>
-          <div>ERP Servicios</div>
-          <small className="text-muted">Soluciones personalizadas</small>
-        </div>
-      </Link>
-    </li>
-    
-    <li>
-      <Link 
-        className="dropdown-item d-flex align-items-center py-2 px-3"
-        to="/sapb1"
-        style={{ transition: 'all 0.2s ease' }}
-        onMouseEnter={(e) => e.currentTarget.style.backgroundColor =  '#fc8210ff'}
-        onMouseLeave={(e) => e.currentTarget.style.backgroundColor = ''}
-      >
-       <i className="fas fa-microchip me-2 text-muted"></i>
-        <div>
-          <div>SAP Business One</div>
-          <small className="text-muted">Gestión integrada</small>
-        </div>
-      </Link>
-    </li>
-    
-    <li>
-      <Link 
-        className="dropdown-item d-flex align-items-center py-2 px-3"
-        to="/bi"
-        style={{ transition: 'all 0.2s ease' }}
-        onMouseEnter={(e) => e.currentTarget.style.backgroundColor =  '#fc8210ff'}
-        onMouseLeave={(e) => e.currentTarget.style.backgroundColor = ''}
-      >
-        <i className="fas fa-chart-line me-2 text-muted"></i> {/* Icono BI */}
-        <div>
-          <div>Business Intelligence</div>
-          <small className="text-muted">Análisis avanzado</small>
-        </div>
-      </Link>
-    </li>
-  </ul>
-</li>
-<li className="nav-item dropdown position-relative">
-  <span 
-    className="nav-link dropdown-toggle d-flex align-items-center py-3 px-3" 
-    id="developmentDropdown"
-    role="button"
-    data-bs-toggle="dropdown" 
-    aria-expanded="false"
-    style={{
-      cursor: 'pointer',
-      transition: 'all 0.3s ease',
-      borderRadius: '4px'
-    }}
-    onMouseEnter={(e) => e.currentTarget.classList.add('bg-light')}
-    onMouseLeave={(e) => e.currentTarget.classList.remove('bg-light')}
-  >
-    <i className="fas fa-laptop-code me-2" style={{ color: '#12eb1dff' }}></i> {/* Nuevo icono */}
-    Desarrollo
-
-  </span>
-  
-  <ul 
-    className="dropdown-menu shadow-lg border-0" 
-    aria-labelledby="developmentDropdown"
-    style={{
-      minWidth: '220px',
-      borderTop: '3px solid #36b0a1'
-    }}
-  >
-    <li>
-      <Link 
-        className="dropdown-item d-flex align-items-center py-2 px-3" 
-        to="/desarrollo-aplicaciones-web"
-        style={{ transition: 'all 0.2s ease' }}
-        onMouseEnter={(e) => e.currentTarget.style.backgroundColor =  '#fc8210ff'}
-        onMouseLeave={(e) => e.currentTarget.style.backgroundColor = ''}
-      >
-        <i className="fas fa-code me-2 text-muted"></i>
-        <div>
-        <div>Desarrollo Web</div>
-        <small className="text-muted">Su Sitio</small>
-        </div>
-      </Link>
-    </li>
-    <li>
-      <Link 
-        className="dropdown-item d-flex align-items-center py-2 px-3" 
-        to="/apis-integraciones"
-        style={{ transition: 'all 0.2s ease' }}
-        onMouseEnter={(e) => e.currentTarget.style.backgroundColor =  '#fc8210ff'}
-        onMouseLeave={(e) => e.currentTarget.style.backgroundColor = ''}
-      >
-        <i className="fas fa-plug me-2 text-muted"></i>
-        <div>
-        <div>Integraciones y APIs</div>
-        <small className="text-muted">Conectemos</small>
-        </div>
-      </Link>
-    </li>
-    <li>
-      <Link 
-        className="dropdown-item d-flex align-items-center py-2 px-3" 
-        to="/tecnologias"
-        style={{ transition: 'all 0.2s ease' }}
-        onMouseEnter={(e) => e.currentTarget.style.backgroundColor =  '#fc8210ff'}
-        onMouseLeave={(e) => e.currentTarget.style.backgroundColor = ''}
-      >
-        <i className="fas fa-microchip me-2 text-muted"></i>
-        <div>
-        <div>Tecnologias</div>
-        <small className="text-muted">Optimizamos</small>
-        </div>
-      </Link>
-    </li>
-  </ul>
-</li>
-
-
-     <li className="nav-item position-relative">
-        <Link
-          to="/ecommerce"
-          className="nav-link d-flex align-items-center py-3 px-3"
-          style={{
-            transition: 'all 0.3s ease',
-            borderRadius: '4px',
-            color: 'inherit'
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.color = '#36b0a1';
-            e.currentTarget.style.backgroundColor = '#f8f9fa';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.color = 'inherit';
-            e.currentTarget.style.backgroundColor = 'transparent';
-          }}
-        >
-          <i className="fas fa-shopping-cart me-2"style={{ color: '#fa0808ff' }}></i> {/* Icono eCommerce */}
-          <span>eCommerce</span>
-        
-        </Link>
-      </li>
-
-
-          <li className="nav-item position-relative">
-            <Link
-              to="/proyectos"
-              className="nav-link d-flex align-items-center py-3 px-3"
-              style={{
-                transition: 'all 0.3s ease',
-                borderRadius: '4px',
-                color: 'inherit'
+            <button
+              type="button"
+              className="nav-link dropdown-toggle"
+              aria-expanded={openDropdown === "erp"}
+              // En desktop anclamos en pointerdown (antes que mouseleave/click), en móvil usamos click
+              onPointerDown={(e) => {
+                if (canHover) {
+                  e.preventDefault();
+                  handleToggle("erp");
+                }
               }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.color = '#36b0a1';
-                e.currentTarget.style.backgroundColor = '#f8f9fa';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.color = 'inherit';
-                e.currentTarget.style.backgroundColor = 'transparent';
+              onClick={(e) => {
+                if (!canHover) handleToggle("erp");
               }}
             >
-              <i className="fas fa-project-diagram me-2"style={{ color: '#5a0bd8ff' }}></i> {/* Icono proyectos */}
-              <span>Proyectos</span>
+              <i className="fas fa-cubes me-2" style={{ color: "#36b0a1" }} />
+              ERP <span className="caret" />
+            </button>
+
+            <ul className="dropdown-menu" role="menu">
+              <li>
+                <Link className="dropdown-item" to="/erpservicios-page" onClick={closeAll}>
+                  <i className="fas fa-cogs me-2 text-muted" />
+                  <div>
+                    <div>ERP Servicios</div>
+                    <small className="text-muted">Soluciones personalizadas</small>
+                  </div>
+                </Link>
+              </li>
+              <li>
+                <Link className="dropdown-item" to="/sapb1" onClick={closeAll}>
+                  <i className="fas fa-microchip me-2 text-muted" />
+                  <div>
+                    <div>SAP Business One</div>
+                    <small className="text-muted">Gestión integrada</small>
+                  </div>
+                </Link>
+              </li>
+              <li>
+                <Link className="dropdown-item" to="/bi" onClick={closeAll}>
+                  <i className="fas fa-chart-line me-2 text-muted" />
+                  <div>
+                    <div>Business Intelligence</div>
+                    <small className="text-muted">Análisis avanzado</small>
+                  </div>
+                </Link>
+              </li>
+            </ul>
+          </li>
+
+          {/* Desarrollo */}
+          <li
+            className={`nav-item dropdown ${openDropdown === "dev" ? "open" : ""}`}
+            onMouseEnter={() => {
+              if (canHover && !pinnedDropdown) setOpenDropdown("dev");
+            }}
+            onMouseLeave={() => {
+              if (canHover && !pinnedDropdown) setOpenDropdown(null);
+            }}
+          >
+            <button
+              type="button"
+              className="nav-link dropdown-toggle"
+              aria-expanded={openDropdown === "dev"}
+              onPointerDown={(e) => {
+                if (canHover) {
+                  e.preventDefault();
+                  handleToggle("dev");
+                }
+              }}
+              onClick={(e) => {
+                if (!canHover) handleToggle("dev");
+              }}
+            >
+              <i className="fas fa-laptop-code me-2" style={{ color: "#12eb1dff" }} />
+              Desarrollo <span className="caret" />
+            </button>
+
+            <ul className="dropdown-menu" role="menu">
+              <li>
+                <Link
+                  className="dropdown-item"
+                  to="/desarrollo-aplicaciones-web"
+                  onClick={closeAll}
+                >
+                  <i className="fas fa-code me-2 text-muted" />
+                  <div>
+                    <div>Desarrollo Web</div>
+                    <small className="text-muted">Su Sitio</small>
+                  </div>
+                </Link>
+              </li>
+              <li>
+                <Link className="dropdown-item" to="/apis-integraciones" onClick={closeAll}>
+                  <i className="fas fa-plug me-2 text-muted" />
+                  <div>
+                    <div>Integraciones y APIs</div>
+                    <small className="text-muted">Conectemos</small>
+                  </div>
+                </Link>
+              </li>
+              <li>
+                <Link className="dropdown-item" to="/tecnologias" onClick={closeAll}>
+                  <i className="fas fa-microchip me-2 text-muted" />
+                  <div>
+                    <div>Tecnologias</div>
+                    <small className="text-muted">Optimizamos</small>
+                  </div>
+                </Link>
+              </li>
+            </ul>
+          </li>
+
+          {/* eCommerce */}
+          <li className="nav-item">
+            <Link to="/ecommerce" className="nav-link" onClick={closeAll}>
+              <i className="fas fa-shopping-cart me-2" style={{ color: "#fa0808ff" }} />
+              eCommerce
             </Link>
           </li>
 
-          <li className="nav-item position-relative">
-            <Link
-              to="/aboutus"
-              className="nav-link d-flex align-items-center py-3 px-3"
-              style={{
-                transition: 'all 0.3s ease',
-                borderRadius: '4px',
-                color: 'inherit'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.color = '#36b0a1';
-                e.currentTarget.style.backgroundColor = '#f8f9fa';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.color = 'inherit';
-                e.currentTarget.style.backgroundColor = 'transparent';
-              }}
-            >
-              <i className="fas fa-users me-2" style={{ color: '#d4f806ff' }}></i> {/* Icono nosotros */}
-              <span>Nosotros</span>
+          {/* Proyectos */}
+          <li className="nav-item">
+            <Link to="/proyectos" className="nav-link" onClick={closeAll}>
+              <i className="fas fa-project-diagram me-2" style={{ color: "#5a0bd8ff" }} />
+              Proyectos
             </Link>
           </li>
 
-          <li className="nav-item position-relative ms-lg-2"> {/* Margen izquierdo en desktop */}
-            <Link
-              to="/contacto"
-              className="nav-link d-flex align-items-center py-2 px-3 contact-button"
-              style={{
-                transition: 'all 0.3s ease',
-                borderRadius: '3px',
-                backgroundColor: '#36b0a1',
-                color: 'white',
-                fontWeight: '200'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#2c8b7d';
-                e.currentTarget.style.transform = 'translateY(-2px)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = '#36b0a1';
-                e.currentTarget.style.transform = 'translateY(0)';
-              }}
-            >
-              <i className="fas fa-paper-plane me-2"></i> {/* Icono contacto */}
-              <span>Contacto</span>
+          {/* Nosotros */}
+          <li className="nav-item">
+            <Link to="/aboutus" className="nav-link" onClick={closeAll}>
+              <i className="fas fa-users me-2" style={{ color: "#d4f806ff" }} />
+              Nosotros
             </Link>
           </li>
 
-
-
-
-
-
-
-      </ul>
+          {/* Contacto */}
+          <li className="nav-item contact-wrapper">
+            <Link to="/contacto" className="nav-link contact-button" onClick={closeAll}>
+              <i className="fas fa-paper-plane me-2" />
+              Contacto
+            </Link>
+          </li>
+        </ul>
+      </div>
     </nav>
   );
 };
