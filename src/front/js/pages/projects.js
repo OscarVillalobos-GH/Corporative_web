@@ -18,7 +18,7 @@ export const Projects = () => {
       description:
         "¿No conoces Power BI? Aquí puedes ver un ejemplo de lo que podemos hacer.",
       image: SAP_four,
-      link: "https://bit.ly/datawolke_demo_powerbi",
+      link: "https://app.powerbi.com/view?r=eyJrIjoiYTAzZDQwMTUtNDU1My00MDU0LTllZmEtNjY5ZGRmMzNmNGRmIiwidCI6Ijk2MjgzZDllLTNhYjQtNDgwNy04ZTZiLWI3NmU0MzI0YWY4ZSJ9",
     },
     {
       id: 7,

@@ -91,12 +91,6 @@ export const Navbar = () => {
   return (
     <nav className="navbar" role="navigation" aria-label="Principal" ref={navRef}>
       <div className="nav-inner">
-        {/* Logo */}
-        <div className="navbar-logo">
-          <Link to="/" onClick={closeAll} aria-label="Ir a inicio">
-            <img src={logo} alt="Logo Compas" />
-          </Link>
-        </div>
 
         {/* Botón hamburguesa */}
         <button
@@ -147,7 +141,7 @@ export const Navbar = () => {
               }}
             >
               <i className="fas fa-cubes me-2" style={{ color: "#36b0a1" }} />
-              ERP <span className="caret" />
+              ERP 
             </button>
 
             <ul className="dropdown-menu" role="menu">
@@ -206,7 +200,7 @@ export const Navbar = () => {
               }}
             >
               <i className="fas fa-laptop-code me-2" style={{ color: "#12eb1dff" }} />
-              Desarrollo <span className="caret" />
+              Desarrollo
             </button>
 
             <ul className="dropdown-menu" role="menu">
