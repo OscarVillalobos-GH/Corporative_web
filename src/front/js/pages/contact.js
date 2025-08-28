@@ -42,47 +42,81 @@ const Contact = () => {
         return newErrors;
     };
 
-    const sendEmail = (e) => {
-        e.preventDefault();
-        setIsSubmitting(true);
+const sendEmail = (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
 
-        const newErrors = validateForm();
-        if (Object.keys(newErrors).length > 0) {
-            setErrors(newErrors);
-            setIsSubmitting(false);
-            return;
-        }
+    const newErrors = validateForm();
+    if (Object.keys(newErrors).length > 0) {
+        setErrors(newErrors);
+        setIsSubmitting(false);
+        return;
+    }
 
-        form.current["phone"].value = `${selectedCountry.code}${phoneNumber}`;
-
-        emailjs
-            .sendForm(
-                process.env.REACT_APP_EMAILJS_SERVICE_ID,
-                process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-                form.current,
-                process.env.REACT_APP_EMAILJS_USER_ID
-            )
-            .then(
-                (result) => {
-                    setSubmitSuccess(true);
-                    form.current.reset();
-                    setErrors({});
-                    setSelectedCountry({ code: "+56", name: "Chile" });
-                    setPhoneNumber("");
-                    setIsSubmitting(false);
-                    setTimeout(() => setSubmitSuccess(false), 5000);
-                },
-                (error) => {
-                    alert("Error al enviar el mensaje, intenta de nuevo.");
-                    console.log(error.text);
-                    setIsSubmitting(false);
-                }
-            );
+    // Prepara los datos
+    const templateParams = {
+        service: form.current["service"].value,
+        name: form.current["name"].value,
+        phone: `${selectedCountry.code}${phoneNumber}`,
+        email: form.current["email"].value,
+        company: form.current["company"].value,
+        position: form.current["position"].value,
+        industry: form.current["industry"].value,
+        employees: form.current["employees"].value,
+        message: form.current["message"].value
     };
+
+    console.log('Enviando datos:', templateParams);
+    console.log('Service ID:', process.env.REACT_APP_EMAILJS_SERVICE_ID);
+    console.log('Template ID Admin:', process.env.REACT_APP_EMAILJS_TEMPLATE_ID_ADMIN);
+    console.log('User ID:', process.env.REACT_APP_EMAILJS_USER_ID);
+
+    // 1. PRIMERO enviar correo a OSCAR@COMPASIT.CL (template_78c855n)
+    emailjs.send(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID_ADMIN, // ← ESTE es el importante
+        templateParams,
+        process.env.REACT_APP_EMAILJS_USER_ID
+    )
+    .then((adminResult) => {
+        console.log('Correo a admin enviado:', adminResult);
+        
+        // 2. LUEGO enviar correo de confirmación al USUARIO (template_m386vdr)
+        return emailjs.send(
+            process.env.REACT_APP_EMAILJS_SERVICE_ID,
+            process.env.REACT_APP_EMAILJS_TEMPLATE_ID, // ← Auto-reply para usuario
+            templateParams,
+            process.env.REACT_APP_EMAILJS_USER_ID
+        );
+    })
+    .then((userResult) => {
+        console.log('Correo a usuario enviado:', userResult);
+        setSubmitSuccess(true);
+        form.current.reset();
+        setErrors({});
+        setSelectedCountry({ code: "+56", name: "Chile" });
+        setPhoneNumber("");
+        setIsSubmitting(false);
+        setTimeout(() => setSubmitSuccess(false), 5000);
+    })
+    .catch((error) => {
+        console.error('Error completo:', error);
+        
+        let errorMessage = 'Error al enviar el mensaje. ';
+        
+        if (error.text) {
+            errorMessage += `Detalles: ${error.text}`;
+        } else {
+            errorMessage += 'Por favor contacta a: oscar@compasit.cl';
+        }
+        
+        alert(errorMessage);
+        setIsSubmitting(false);
+    });
+};
 
     return (
         <div className="contact-container" style={{ marginTop: '0', paddingTop: '0' }}>
-            {/* Sección de Contacto - Estilo anterior */}
             <section className="mb-0 ecommerce-section" id="contact-form" style={{ paddingTop: '2rem' }}>
                 <div className="container">
                     <div className="row justify-content-center">
@@ -94,9 +128,7 @@ const Contact = () => {
                             )}
                             
                             <h2 style={{ color: "#f7f1f1ff" }} className="text-center mb-4">
-                               <p>
-                                
-                               </p>
+                                <p></p>
                             </h2>
                             
                             <form ref={form} onSubmit={sendEmail} className="contact-form">
@@ -132,9 +164,8 @@ const Contact = () => {
 
                                 {/* Teléfono */}
                                 <div className="form-group">
-                                <div className="d-flex align-items-center gap-2"> {/* Flex para alinear en misma línea */}
-
-                                    <select
+                                    <div className="d-flex align-items-center gap-2">
+                                        <select
                                             className="form-select"
                                             style={{ width: '120px' }}
                                             value={selectedCountry.name}
@@ -151,18 +182,18 @@ const Contact = () => {
                                                 </option>
                                             ))}
                                         </select>
-                                    
-                                    <input
-                                    type="tel"
-                                    className="form-control flex-grow-1" /* Ocupa el espacio restante */
-                                    name="phone"
-                                    value={phoneNumber}
-                                    onChange={(e) => setPhoneNumber(e.target.value)}
-                                    placeholder="Número telefónico*"
-                                    required
-                                    />
-                                </div>
-                                {errors.phone && <p className="text-danger small mt-1">{errors.phone}</p>}
+                                        
+                                        <input
+                                            type="tel"
+                                            className="form-control flex-grow-1"
+                                            name="phone"
+                                            value={phoneNumber}
+                                            onChange={(e) => setPhoneNumber(e.target.value)}
+                                            placeholder="Número telefónico*"
+                                            required
+                                        />
+                                    </div>
+                                    {errors.phone && <p className="text-danger small mt-1">{errors.phone}</p>}
                                 </div>
 
                                 {/* Email */}
@@ -202,7 +233,7 @@ const Contact = () => {
                                 <div className="form-group">
                                     <select name="industry" required>
                                         <option value="">Seleccione la industria*</option>
-                                         <option>Agricultura</option>
+                                        <option>Agricultura</option>
                                         <option>Agua y gas</option>
                                         <option>Alimentación</option>
                                         <option>Automotriz</option>

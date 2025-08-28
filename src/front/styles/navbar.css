@@ -20,10 +20,6 @@
   justify-content: space-between;
 }
 
-.navbar-logo img {
-  height: 45px;
-}
-
 /* ====== HAMBURGER ====== */
 .navbar-toggle {
   display: none;
@@ -76,10 +72,11 @@
   font-size: 14px;
   border-radius: 6px;
   transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+   
 }
 .nav-link:hover {
   color: #36b0a1;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(248, 242, 242, 0.13);
 }
 
 /* Botón de contacto */
@@ -87,15 +84,17 @@
   background-color: #36b0a1;
   color: #fff !important;
   padding: 6px 14px;
-  border-radius: 20px;
-  font-weight: 600;
+  border-radius: 3px;
+  font-weight: 500;
 }
 .contact-button:hover {
   background: #2c8b7d;
   transform: translateY(-1px);
+
 }
 .contact-wrapper {
   margin-left: 8px;
+ 
 }
 
 /* ====== DROPDOWNS (GENERAL) ====== */
@@ -116,6 +115,7 @@
   display: inline-block;
   padding: 3px;
   transform: rotate(45deg);
+  
 }
 
 .dropdown-menu {
@@ -130,11 +130,13 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   display: none;
   z-index: 2000;
+  
 }
 
 /* Mostrar por clase .open (click/tap) */
 .dropdown.open > .dropdown-menu {
   display: block;
+
 }
 
 /* Rotar caret al abrir */
@@ -152,7 +154,8 @@
   transition: background 0.15s ease;
 }
 .dropdown-item:hover {
-  background: #fc8210ff;
+  border-radius: 8px;
+  background: rgb(250, 137, 31);
   color: #111;
 }
 .dropdown-item small {
@@ -221,4 +224,33 @@
 /* ====== Ajuste para layout fijo (opcional) ====== */
 body.with-fixed-navbar {
   padding-top: 65px;
+}
+
+/* Eliminar subrayados de todos los elementos del dropdown */
+.dropdown-item,
+.dropdown-item:link, 
+.dropdown-item:visited, 
+.dropdown-item:hover, 
+.dropdown-item:active, 
+.dropdown-item:focus {
+  text-decoration: none !important;
+}
+
+/* Asegurar que los textos dentro del dropdown no tengan subrayado */
+.dropdown-menu div,
+.dropdown-menu small {
+  text-decoration: none !important;
+}
+
+/* Opcional: mejorar el espaciado y aspecto visual */
+.dropdown-item div {
+  line-height: 1.4;
+}
+
+.dropdown-item small {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.75rem;
+  opacity: 0.8;
+ 
 }
