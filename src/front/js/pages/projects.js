@@ -34,7 +34,7 @@ export const Projects = () => {
       description:
         "Crea y sigue despachos en tiempo real, genera PDF con código de barras y administra productos, clientes y choferes en un solo lugar.",
       image: App,
-      link: "https://signoapp-front.onrender.com/",
+      link: "https://www.signo-app.com/",
     },
   ];
 
